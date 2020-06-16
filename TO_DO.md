@@ -1,0 +1,11 @@
+# TO DO : listes des tâches à effectuer pour ce projet
+- [ ] paramétrer  vs code pour pouvoir l'utiliser pour ce projet
+- [ ] finir le cour openclaroom sur le c
+- [ ] lire des sites web de documentation à propos du black jack
+- [ ] commencer à travailler le code 
+- [ ] création des stuctures 
+- [ ] distibution des cartes
+- [ ] mi juillet : avoir un programme qui penmet de joueur avec un utilisataeur humain au jeu
+- [ ] commencer le cour openclassroom's sur le machine learning
+- [ ] fin juillet : avoir une ébauche d'inteligence artificielle et avoir trouver la méthode lui permétant d'apprendre pour faire les meilleur coup
+- [ ] fin aout : sortir une première version complète du programme en faisant en prioritée les règles pour les casino français 
