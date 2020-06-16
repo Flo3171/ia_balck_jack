@@ -41,7 +41,7 @@ Acuellement grâce à l'augmentation de la puissance de calcul des ordinateurs i
 Même si ce projet se déroule au rythme que je choisi et en fonction du temps que j'ai envie d'y passer les dead lines sont les suivantes :
 
 * fin juin : mise en place de l'environement de dévelopement(vs code apérationel) et fin de la phase de documentation active
-* mi juillet : avoir un programme qui penmet de joueur avec un utilistaeur humain au jeu
+* mi juillet : avoir un programme qui penmet de joueur avec un utilisataeur humain au jeu
 * fin juillet : avoir une ébauche d'inteligence artificielle et avoir trouver la méthode lui permétant d'apprendre pour faire les meilleur coup
 * fin aout : sortir une première version complète du programme en faisant en prioritée les règles pour les casino français 
 
