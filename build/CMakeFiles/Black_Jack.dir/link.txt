@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\Black_Jack.dir/objects.a
+D:\programes\MinGW-W64\mingw64\bin\ar.exe cr CMakeFiles\Black_Jack.dir/objects.a @CMakeFiles\Black_Jack.dir\objects1.rsp
+D:\programes\MinGW-W64\mingw64\bin\x86_64-w64-mingw32-gcc.exe -g   -Wl,--whole-archive CMakeFiles\Black_Jack.dir/objects.a -Wl,--no-whole-archive  -o Black_Jack.exe -Wl,--out-implib,libBlack_Jack.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Black_Jack.dir\linklibs.rsp

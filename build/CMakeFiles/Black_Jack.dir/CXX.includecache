@@ -1,0 +1,12 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/main.cpp
+iostream
+-
+

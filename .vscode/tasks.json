@@ -8,6 +8,8 @@
                 "-g",
                 "${file}",
                 "-o",
+                "-WALL",
+                "-Werror",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
             "options": {

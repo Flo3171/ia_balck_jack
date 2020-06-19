@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/main.c
+stdlib.h
+-
+stdio.h
+-
+partie.h
+C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/partie.h
+
+C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/partie.c
+partie.h
+C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/partie.h
+stdlib.h
+-
+stdio.h
+-
+
+C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/partie.h
+

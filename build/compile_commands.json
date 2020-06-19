@@ -1,0 +1,12 @@
+[
+{
+  "directory": "C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/build",
+  "command": "D:\\programes\\MinGW-W64\\mingw64\\bin\\x86_64-w64-mingw32-gcc.exe   -g   -o CMakeFiles\\Black_Jack.dir\\src\\main.c.obj   -c \"C:\\Users\\flocl\\OneDrive - Universite De Technologie De Belfort-Montbeliard\\projet perso\\projet black jack\\ia_balck_jack\\src\\main.c\"",
+  "file": "C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/main.c"
+},
+{
+  "directory": "C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/build",
+  "command": "D:\\programes\\MinGW-W64\\mingw64\\bin\\x86_64-w64-mingw32-gcc.exe   -g   -o CMakeFiles\\Black_Jack.dir\\src\\partie.c.obj   -c \"C:\\Users\\flocl\\OneDrive - Universite De Technologie De Belfort-Montbeliard\\projet perso\\projet black jack\\ia_balck_jack\\src\\partie.c\"",
+  "file": "C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/partie.c"
+}
+]
