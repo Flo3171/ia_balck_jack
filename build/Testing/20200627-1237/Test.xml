@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="Win32-mingw32-make"
+	BuildStamp="20200627-1237-Experimental"
+	Name="LAPTOP-O85POEKQ"
+	Generator="ctest-3.17.3"
+	CompilerName="D:/programes/MinGW-W64/mingw64/bin/x86_64-w64-mingw32-g++.exe"
+	CompilerVersion="8.1.0"
+	OSName="Windows"
+	Hostname="LAPTOP-O85POEKQ"
+	OSRelease=" Personal"
+	OSVersion=" (Build 18363)"
+	OSPlatform="AMD64"
+	Is64Bits="1"
+	VendorString="GenuineIntel"
+	VendorID="Intel Corporation"
+	FamilyID="6"
+	ModelID="14"
+	ProcessorCacheSize="-1"
+	NumberOfLogicalCPU="12"
+	NumberOfPhysicalCPU="6"
+	TotalVirtualMemory="16746"
+	TotalPhysicalMemory="8042"
+	LogicalProcessorsPerPhysical="2"
+	ProcessorClockFrequency="2208"
+	>
+	<Testing>
+		<StartDateTime>Jun 27 14:37 Paris, Madrid (heure d?[NON-UTF-8-BYTE-0xE9]t[NON-UTF-8-BYTE-0xE9])</StartDateTime>
+		<StartTestTime>1593261464</StartTestTime>
+		<TestList/>
+		<EndDateTime>Jun 27 14:37 Paris, Madrid (heure d?[NON-UTF-8-BYTE-0xE9]t[NON-UTF-8-BYTE-0xE9])</EndDateTime>
+		<EndTestTime>1593261464</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

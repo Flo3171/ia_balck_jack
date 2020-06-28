@@ -7,10 +7,17 @@ enable_testing()
 set(SRCS
     src/main.c
     src/partie.c
+    src/gestionCarte.c
+    src/autre.c
     )
 
 set (HEADERS
-    src/partie.h)
+    src/main.h
+    src/structure.h
+    src/partie.h
+    src/gestionCarte.h
+    src/autre.h 
+    )
 
 add_executable(Black_Jack ${SRCS} ${HEADERS})
 

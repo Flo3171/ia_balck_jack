@@ -539,6 +539,60 @@ Black_Jack/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Black_Jack.dir\build.make CMakeFiles/Black_Jack.dir/build
 .PHONY : Black_Jack/fast
 
+src/autre.obj: src/autre.c.obj
+
+.PHONY : src/autre.obj
+
+# target to build an object file
+src/autre.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Black_Jack.dir\build.make CMakeFiles/Black_Jack.dir/src/autre.c.obj
+.PHONY : src/autre.c.obj
+
+src/autre.i: src/autre.c.i
+
+.PHONY : src/autre.i
+
+# target to preprocess a source file
+src/autre.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Black_Jack.dir\build.make CMakeFiles/Black_Jack.dir/src/autre.c.i
+.PHONY : src/autre.c.i
+
+src/autre.s: src/autre.c.s
+
+.PHONY : src/autre.s
+
+# target to generate assembly for a file
+src/autre.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Black_Jack.dir\build.make CMakeFiles/Black_Jack.dir/src/autre.c.s
+.PHONY : src/autre.c.s
+
+src/gestionCarte.obj: src/gestionCarte.c.obj
+
+.PHONY : src/gestionCarte.obj
+
+# target to build an object file
+src/gestionCarte.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Black_Jack.dir\build.make CMakeFiles/Black_Jack.dir/src/gestionCarte.c.obj
+.PHONY : src/gestionCarte.c.obj
+
+src/gestionCarte.i: src/gestionCarte.c.i
+
+.PHONY : src/gestionCarte.i
+
+# target to preprocess a source file
+src/gestionCarte.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Black_Jack.dir\build.make CMakeFiles/Black_Jack.dir/src/gestionCarte.c.i
+.PHONY : src/gestionCarte.c.i
+
+src/gestionCarte.s: src/gestionCarte.c.s
+
+.PHONY : src/gestionCarte.s
+
+# target to generate assembly for a file
+src/gestionCarte.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Black_Jack.dir\build.make CMakeFiles/Black_Jack.dir/src/gestionCarte.c.s
+.PHONY : src/gestionCarte.c.s
+
 src/main.obj: src/main.c.obj
 
 .PHONY : src/main.obj
@@ -633,6 +687,12 @@ help:
 	@echo ... NightlyTest
 	@echo ... NightlyUpdate
 	@echo ... Black_Jack
+	@echo ... src/autre.obj
+	@echo ... src/autre.i
+	@echo ... src/autre.s
+	@echo ... src/gestionCarte.obj
+	@echo ... src/gestionCarte.i
+	@echo ... src/gestionCarte.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s

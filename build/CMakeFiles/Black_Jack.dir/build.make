@@ -102,21 +102,51 @@ CMakeFiles/Black_Jack.dir/src/partie.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Black_Jack.dir/src/partie.c.s"
 	D:\programes\MinGW-W64\mingw64\bin\x86_64-w64-mingw32-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\flocl\OneDrive - Universite De Technologie De Belfort-Montbeliard\projet perso\projet black jack\ia_balck_jack\src\partie.c" -o CMakeFiles\Black_Jack.dir\src\partie.c.s
 
+CMakeFiles/Black_Jack.dir/src/gestionCarte.c.obj: CMakeFiles/Black_Jack.dir/flags.make
+CMakeFiles/Black_Jack.dir/src/gestionCarte.c.obj: ../src/gestionCarte.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\flocl\OneDrive - Universite De Technologie De Belfort-Montbeliard\projet perso\projet black jack\ia_balck_jack\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/Black_Jack.dir/src/gestionCarte.c.obj"
+	D:\programes\MinGW-W64\mingw64\bin\x86_64-w64-mingw32-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Black_Jack.dir\src\gestionCarte.c.obj   -c "C:\Users\flocl\OneDrive - Universite De Technologie De Belfort-Montbeliard\projet perso\projet black jack\ia_balck_jack\src\gestionCarte.c"
+
+CMakeFiles/Black_Jack.dir/src/gestionCarte.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Black_Jack.dir/src/gestionCarte.c.i"
+	D:\programes\MinGW-W64\mingw64\bin\x86_64-w64-mingw32-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\flocl\OneDrive - Universite De Technologie De Belfort-Montbeliard\projet perso\projet black jack\ia_balck_jack\src\gestionCarte.c" > CMakeFiles\Black_Jack.dir\src\gestionCarte.c.i
+
+CMakeFiles/Black_Jack.dir/src/gestionCarte.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Black_Jack.dir/src/gestionCarte.c.s"
+	D:\programes\MinGW-W64\mingw64\bin\x86_64-w64-mingw32-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\flocl\OneDrive - Universite De Technologie De Belfort-Montbeliard\projet perso\projet black jack\ia_balck_jack\src\gestionCarte.c" -o CMakeFiles\Black_Jack.dir\src\gestionCarte.c.s
+
+CMakeFiles/Black_Jack.dir/src/autre.c.obj: CMakeFiles/Black_Jack.dir/flags.make
+CMakeFiles/Black_Jack.dir/src/autre.c.obj: ../src/autre.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\flocl\OneDrive - Universite De Technologie De Belfort-Montbeliard\projet perso\projet black jack\ia_balck_jack\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/Black_Jack.dir/src/autre.c.obj"
+	D:\programes\MinGW-W64\mingw64\bin\x86_64-w64-mingw32-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Black_Jack.dir\src\autre.c.obj   -c "C:\Users\flocl\OneDrive - Universite De Technologie De Belfort-Montbeliard\projet perso\projet black jack\ia_balck_jack\src\autre.c"
+
+CMakeFiles/Black_Jack.dir/src/autre.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Black_Jack.dir/src/autre.c.i"
+	D:\programes\MinGW-W64\mingw64\bin\x86_64-w64-mingw32-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\flocl\OneDrive - Universite De Technologie De Belfort-Montbeliard\projet perso\projet black jack\ia_balck_jack\src\autre.c" > CMakeFiles\Black_Jack.dir\src\autre.c.i
+
+CMakeFiles/Black_Jack.dir/src/autre.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Black_Jack.dir/src/autre.c.s"
+	D:\programes\MinGW-W64\mingw64\bin\x86_64-w64-mingw32-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\flocl\OneDrive - Universite De Technologie De Belfort-Montbeliard\projet perso\projet black jack\ia_balck_jack\src\autre.c" -o CMakeFiles\Black_Jack.dir\src\autre.c.s
+
 # Object files for target Black_Jack
 Black_Jack_OBJECTS = \
 "CMakeFiles/Black_Jack.dir/src/main.c.obj" \
-"CMakeFiles/Black_Jack.dir/src/partie.c.obj"
+"CMakeFiles/Black_Jack.dir/src/partie.c.obj" \
+"CMakeFiles/Black_Jack.dir/src/gestionCarte.c.obj" \
+"CMakeFiles/Black_Jack.dir/src/autre.c.obj"
 
 # External object files for target Black_Jack
 Black_Jack_EXTERNAL_OBJECTS =
 
 Black_Jack.exe: CMakeFiles/Black_Jack.dir/src/main.c.obj
 Black_Jack.exe: CMakeFiles/Black_Jack.dir/src/partie.c.obj
+Black_Jack.exe: CMakeFiles/Black_Jack.dir/src/gestionCarte.c.obj
+Black_Jack.exe: CMakeFiles/Black_Jack.dir/src/autre.c.obj
 Black_Jack.exe: CMakeFiles/Black_Jack.dir/build.make
 Black_Jack.exe: CMakeFiles/Black_Jack.dir/linklibs.rsp
 Black_Jack.exe: CMakeFiles/Black_Jack.dir/objects1.rsp
 Black_Jack.exe: CMakeFiles/Black_Jack.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\flocl\OneDrive - Universite De Technologie De Belfort-Montbeliard\projet perso\projet black jack\ia_balck_jack\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable Black_Jack.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\flocl\OneDrive - Universite De Technologie De Belfort-Montbeliard\projet perso\projet black jack\ia_balck_jack\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable Black_Jack.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Black_Jack.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

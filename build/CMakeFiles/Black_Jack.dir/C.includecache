@@ -6,21 +6,35 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/autre.h
+
+C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/gestionCarte.h
+
 C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/main.c
+main.h
+C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/main.h
+
+C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/main.h
+structure.h
+C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/structure.h
 stdlib.h
 -
 stdio.h
 -
+string.h
+-
+conio.h
+-
+time.h
+-
 partie.h
 C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/partie.h
-
-C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/partie.c
-partie.h
-C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/partie.h
-stdlib.h
--
-stdio.h
--
+gestionCarte.h
+C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/gestionCarte.h
+autre.h
+C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/autre.h
 
 C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/partie.h
+
+C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/structure.h
 
