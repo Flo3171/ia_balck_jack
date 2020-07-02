@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/affichage.c" "C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/build/CMakeFiles/Black_Jack.dir/src/affichage.c.obj"
   "C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/autre.c" "C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/build/CMakeFiles/Black_Jack.dir/src/autre.c.obj"
   "C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/gestionCarte.c" "C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/build/CMakeFiles/Black_Jack.dir/src/gestionCarte.c.obj"
   "C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/main.c" "C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/build/CMakeFiles/Black_Jack.dir/src/main.c.obj"

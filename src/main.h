@@ -12,6 +12,7 @@
 //Déclaration des contsantes
 #define NB_CARTE_PAQUETS 52
 #define NB_FAMILLE_PAQUETS 4
+#define NB_JOUEUR_MAXI 7
 
 //Inclusion des structures
 #include "structure.h"
@@ -29,6 +30,7 @@
 #include "partie.h"
 #include "gestionCarte.h"
 #include "autre.h"
+#include "affichage.h"
 
 
 #endif //MAIN_H_

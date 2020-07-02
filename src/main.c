@@ -16,21 +16,33 @@
 
 #include "main.h"
 
-int main(){
+int main(int argc, char *argv[]){
     srand(time(NULL));
-    printf("*********************PROGAM START*********************\n");
-
-
-    
-    Carte* sabot = melangeCarte(2);
-    for (int  i = 0; i < 4*2; i++)
+    printf("*********************PROGRAM START*********************\n");
+    char continuer = 1, retour = 0;
+    Parametre parametre;
+    while (continuer)
     {
-        for (int j = 0; j < 13; j++)
+        retour = acquisitionSansMessage(1, 3, "Qelle action souhaitez vous réaliser ?\n1-JOUER\n2-Parametres\n3-Quitter");
+        switch (retour)
         {
-            printf("%d  ", sabot[i*13 +j]);
-        }
-        printf("\n");
+        case 1:
+            joueBlackJack(parametre);
+            break;
+        case 2:
+            choisirParametre(&parametre);
+            break;
         
+        default:
+            continuer = 0;
+            break;
+        }
     }
+    
+    
+    
+    
+
+    printf("\n**********************PROGRAM END**********************\n");
     return EXIT_SUCCESS;
 }

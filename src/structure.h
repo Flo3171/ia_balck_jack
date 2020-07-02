@@ -35,4 +35,35 @@ typedef enum Carte
     AS = 1/*! Carte d'une valeur de 11 en soft et 1 en hard*/
 }Carte;
 
+/**
+ * \enum OuiNon
+ * \brief vaut soit oui soit non
+ */
+
+typedef enum OuiNon{
+    NON = 0,/*!non*/
+    OUI = 1/*!oui*/
+}OuiNon;
+
+/**
+ * \struct Parametre
+ * \brief regroupe tout les paramètre et les règle liée au jeu du black jack
+ */
+
+typedef struct Parametre
+{
+    int nbJeuParSabot;/*! Indique le nombre de jeux de 52 cartes que contient chacun des sabot*/
+    int nbJoueur;/*! Indique le nombre de joueur autour de la table*/
+    int nbCarteBrule;/*! Indique le nombre de cartes que le croupier brule au début de chaque partie*/
+    OuiNon abandont;/* Indique si l'abandont est autorisé ou non*/
+    int nbPaireMaxi;/* Indique le nombre de paire maximum qu'il est possible de spliter (mettre -1 si il n'y a pas de limite)*/
+    OuiNon doublerPaire; /*! Indique si il est possible de doubler après avoir spliter une paire*/
+    long miseMini; /*! Indique la mise minimum pour une partie*/
+    long miseMaxi;/*! Indique la mise maximum pour une partie*/
+    long pactoleInitial;/*! Indique la somme d'argent que le joueur possède quand il commence a jouer*/
+    int positionUtilisateur; /*! Indique l'indice de la position de l'utilisateur (nombre entier entre 0 et nbjoueur-1), si il n'y a pas d'utilisateur mettre -1*/
+    int nbpartie; /*! Indique le nombre de partie de black jack qui seront jouée*/
+}Parametre;
+
+
 #endif //_STRUCTURE_H_

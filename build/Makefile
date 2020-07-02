@@ -539,6 +539,33 @@ Black_Jack/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Black_Jack.dir\build.make CMakeFiles/Black_Jack.dir/build
 .PHONY : Black_Jack/fast
 
+src/affichage.obj: src/affichage.c.obj
+
+.PHONY : src/affichage.obj
+
+# target to build an object file
+src/affichage.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Black_Jack.dir\build.make CMakeFiles/Black_Jack.dir/src/affichage.c.obj
+.PHONY : src/affichage.c.obj
+
+src/affichage.i: src/affichage.c.i
+
+.PHONY : src/affichage.i
+
+# target to preprocess a source file
+src/affichage.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Black_Jack.dir\build.make CMakeFiles/Black_Jack.dir/src/affichage.c.i
+.PHONY : src/affichage.c.i
+
+src/affichage.s: src/affichage.c.s
+
+.PHONY : src/affichage.s
+
+# target to generate assembly for a file
+src/affichage.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Black_Jack.dir\build.make CMakeFiles/Black_Jack.dir/src/affichage.c.s
+.PHONY : src/affichage.c.s
+
 src/autre.obj: src/autre.c.obj
 
 .PHONY : src/autre.obj
@@ -687,6 +714,9 @@ help:
 	@echo ... NightlyTest
 	@echo ... NightlyUpdate
 	@echo ... Black_Jack
+	@echo ... src/affichage.obj
+	@echo ... src/affichage.i
+	@echo ... src/affichage.s
 	@echo ... src/autre.obj
 	@echo ... src/autre.i
 	@echo ... src/autre.s
