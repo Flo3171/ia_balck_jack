@@ -57,7 +57,7 @@ void choisirParametre(Parametre *parametre)
         {
             printf("%d\n", parametre->positionUtilisateur);
         }
-        printf("11-Nombre de partie jouee : \t%d\n\n", parametre->nbpartie);
+        printf("11-Nombre de partie jouee : \t%d\n\n", parametre->nbPartie);
 
         /* On propose à l'utilisateur de modifier les paramètre*/
         retour = acquisitionSansMessage(1, 12, "Entrez le numeros du parametre que vous souhaitez modifier, entrer 12 pour quitter");
@@ -111,7 +111,7 @@ void choisirParametre(Parametre *parametre)
             parametre->positionUtilisateur = acquisitionSansMessage(-1, NB_JOUEUR_MAXI, "Quel est la position de l'utilisateur ?(mettre -1 si il n'y a pas d'utilisateur)\n");
             break;
         case 11:
-            parametre->nbpartie = acquisitionSansMessage(1, LONG_MAX, "Combien de partie voulez vous jouer ?\n");
+            parametre->nbPartie = acquisitionSansMessage(1, LONG_MAX, "Combien de partie voulez vous jouer ?\n");
             break;
         default:
             /*On contrôle que les paramètre sont cohérent*/
@@ -150,7 +150,7 @@ void setParametre(Parametre *parametre, int nbJeuParSabot, int nbJoueur, int nbC
     parametre->miseMaxi = miseMaxi;
     parametre->pactoleInitial = pactoleInitial;
     parametre->positionUtilisateur = positionUtilisateur;
-    parametre->nbpartie = nbPartie;
+    parametre->nbPartie = nbPartie;
 }
 
 long acquisitionDoubleSecurisee()

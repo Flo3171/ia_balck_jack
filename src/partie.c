@@ -1,6 +1,6 @@
 /**
  * \file partie.c 
- * \brief ficher source contenant les fonction en raport avec une partie
+ * \brief ficher source contenant les fonctions en raport avec une partie
  * \author Florian.C
  * \version v1.0
  * \date 19 juin 2020
@@ -20,7 +20,7 @@ void joueBlackJack(Parametre parametre)
     }
 
     /*! On appelle autant de fois que souhaité la fonction "partie"*/
-    for (int i = 0; i < parametre.nbpartie; i++)
+    for (int i = 0; i < parametre.nbPartie; i++)
     {
         partie(parametre, sabot, &callstackSabot);
     }

@@ -620,6 +620,60 @@ src/gestionCarte.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Black_Jack.dir\build.make CMakeFiles/Black_Jack.dir/src/gestionCarte.c.s
 .PHONY : src/gestionCarte.c.s
 
+src/gestionDonnee.obj: src/gestionDonnee.c.obj
+
+.PHONY : src/gestionDonnee.obj
+
+# target to build an object file
+src/gestionDonnee.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Black_Jack.dir\build.make CMakeFiles/Black_Jack.dir/src/gestionDonnee.c.obj
+.PHONY : src/gestionDonnee.c.obj
+
+src/gestionDonnee.i: src/gestionDonnee.c.i
+
+.PHONY : src/gestionDonnee.i
+
+# target to preprocess a source file
+src/gestionDonnee.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Black_Jack.dir\build.make CMakeFiles/Black_Jack.dir/src/gestionDonnee.c.i
+.PHONY : src/gestionDonnee.c.i
+
+src/gestionDonnee.s: src/gestionDonnee.c.s
+
+.PHONY : src/gestionDonnee.s
+
+# target to generate assembly for a file
+src/gestionDonnee.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Black_Jack.dir\build.make CMakeFiles/Black_Jack.dir/src/gestionDonnee.c.s
+.PHONY : src/gestionDonnee.c.s
+
+src/listeChainee.obj: src/listeChainee.c.obj
+
+.PHONY : src/listeChainee.obj
+
+# target to build an object file
+src/listeChainee.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Black_Jack.dir\build.make CMakeFiles/Black_Jack.dir/src/listeChainee.c.obj
+.PHONY : src/listeChainee.c.obj
+
+src/listeChainee.i: src/listeChainee.c.i
+
+.PHONY : src/listeChainee.i
+
+# target to preprocess a source file
+src/listeChainee.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Black_Jack.dir\build.make CMakeFiles/Black_Jack.dir/src/listeChainee.c.i
+.PHONY : src/listeChainee.c.i
+
+src/listeChainee.s: src/listeChainee.c.s
+
+.PHONY : src/listeChainee.s
+
+# target to generate assembly for a file
+src/listeChainee.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Black_Jack.dir\build.make CMakeFiles/Black_Jack.dir/src/listeChainee.c.s
+.PHONY : src/listeChainee.c.s
+
 src/main.obj: src/main.c.obj
 
 .PHONY : src/main.obj
@@ -723,6 +777,12 @@ help:
 	@echo ... src/gestionCarte.obj
 	@echo ... src/gestionCarte.i
 	@echo ... src/gestionCarte.s
+	@echo ... src/gestionDonnee.obj
+	@echo ... src/gestionDonnee.i
+	@echo ... src/gestionDonnee.s
+	@echo ... src/listeChainee.obj
+	@echo ... src/listeChainee.i
+	@echo ... src/listeChainee.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s

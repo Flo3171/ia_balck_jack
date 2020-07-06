@@ -31,6 +31,8 @@
 #include "gestionCarte.h"
 #include "autre.h"
 #include "affichage.h"
+#include "gestionDonnee.h"
+#include "listeChainee.h"
 
 
 #endif //MAIN_H_

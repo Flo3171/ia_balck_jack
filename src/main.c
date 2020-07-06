@@ -21,9 +21,14 @@ int main(int argc, char *argv[]){
     printf("*********************PROGRAM START*********************\n");
     char continuer = 1, retour = 0;
     Parametre parametre;
+    chargeParametre("data/default_parametre.txt", &parametre);
+    
+    
+    
+    
     while (continuer)
     {
-        retour = acquisitionSansMessage(1, 3, "Qelle action souhaitez vous réaliser ?\n1-JOUER\n2-Parametres\n3-Quitter");
+        retour = acquisitionSansMessage(1, 3, "Qelle action souhaitez vous realiser ?\n1-JOUER\n2-Parametres\n3-Quitter");
         switch (retour)
         {
         case 1:

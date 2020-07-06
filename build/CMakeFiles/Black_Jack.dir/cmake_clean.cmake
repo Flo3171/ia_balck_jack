@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Black_Jack.dir/src/affichage.c.obj"
   "CMakeFiles/Black_Jack.dir/src/autre.c.obj"
   "CMakeFiles/Black_Jack.dir/src/gestionCarte.c.obj"
+  "CMakeFiles/Black_Jack.dir/src/gestionDonnee.c.obj"
+  "CMakeFiles/Black_Jack.dir/src/listeChainee.c.obj"
   "CMakeFiles/Black_Jack.dir/src/main.c.obj"
   "CMakeFiles/Black_Jack.dir/src/partie.c.obj"
   "libBlack_Jack.dll.a"

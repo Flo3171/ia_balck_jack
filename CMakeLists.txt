@@ -10,6 +10,8 @@ set(SRCS
     src/gestionCarte.c
     src/autre.c
     src/affichage.c
+    src/gestionDonnee.c
+    src/listeChainee.c
     )
 
 set (HEADERS
@@ -19,6 +21,8 @@ set (HEADERS
     src/gestionCarte.h
     src/autre.h 
     src/affichage.h
+    src/gestionDonnee.h
+    src/listeChainee.h
     )
 
 add_executable(Black_Jack ${SRCS} ${HEADERS})
