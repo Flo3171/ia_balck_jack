@@ -24,16 +24,18 @@
 void joueBlackJack(Parametre parametre);
 
 /**
- * \fn void partie(Parametre parametre, Carte sabot[], int callStackSabot)
+ * \fn void partie(Parametre parametre, Carte sabot[], int *callStackSabot, Joueur tableauJoueur[], CarteListeChaine *mainDealer)
  * \brief joue une partie de black jack
  * 
  * \param Parametre parametre : les paramètre qui doivent être appliqués à la partie 
  * \param Carte sabot[] : tableau contenant les cartes du sabot
  * \param int *callStackSablot : pointeur sur l'indice du tableau ou piocher la carte suivant
+ * \param Joueur tableauJoueur[] : tableau contenant les différent joueur
+ * \param CarteListeChaine *mainDealer :  liste chainée qui contient les carte du dealer
  * \return void
 */
 
-void partie(Parametre parametre, Carte sabot[], int *callStackSabot);
+void partie(Parametre parametre, Carte sabot[], int *callStackSabot, Joueur tableauJoueur[], CarteListeChaine *mainDealer);
 
 
 

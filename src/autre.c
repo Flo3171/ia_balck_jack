@@ -184,3 +184,12 @@ long acquisitionSansMessage(long mini, long maxi, char consigne[])
     return valeurRetour;
     
 }
+
+void setJoueur(Joueur *joueur, Caractere caractere, long pactole, CarteListeChaine *mainJoueur, Decision choixJoueur, long mise)
+{
+    joueur->caractere = caractere;
+    joueur->pactole = pactole;
+    joueur->mainJoueur = mainJoueur;
+    joueur->choixJoueur = choixJoueur;
+    joueur->mise = mise;
+}

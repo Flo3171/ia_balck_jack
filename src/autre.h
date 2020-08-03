@@ -72,6 +72,20 @@ long acquisitionDoubleSecurisee();
 
 long acquisitionSansMessage(long mini, long maxi, char consigne[]);
 
+/** 
+ * \fn void setJoueur(Joueur *joueur, Caractere caractere, long pactole, CarteListeChaine *mainJoueur, Decision choixJoueur, long mise);
+ * \brief modifie une variable de type joueur 
+ * 
+ * \param Joueur *joueur : pointeur sur la variable joueur à modifier
+ * \param Caractere caractere : carcactère du joueur
+ * \param long pactole : pactole du joueur
+ * \param CarteListeChaine *mainJoueur : pointeur sur le premoer élément de la main du joueur 
+ * \param Decision choixJoueur : action que le joueur va faire
+ * \param long mise : mise du joueur pour la partie
+ * \return void
+ */
+
+void setJoueur(Joueur *joueur, Caractere caractere, long pactole, CarteListeChaine *mainJoueur, Decision choixJoueur, long mise);
 
 
 #endif //_AUTRE_H_

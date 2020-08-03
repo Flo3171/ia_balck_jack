@@ -124,7 +124,7 @@ typedef struct Joueur
 {
     Caractere caractere; /*! facon de jouer qu'aura le joueur (humain ou ia et quel type d'ia)*/
     long pactole; /*! Somme d'argent que le joueur possède*/
-    CarteListeChaine mainJoueur; /*! premier élément de la liste chainée qui contient toutes les cartes que le joueur à en main*/
+    CarteListeChaine *mainJoueur; /*! pointeur sur le premier élément de la liste chainée qui contient toutes les cartes que le joueur à en main*/
     Decision choixJoueur; /*! Action que le joueur à choisi de faire lorsque c'est sont tour de parler*/
     long mise; /*! mise choisie par le joueur pour la partie*/
 

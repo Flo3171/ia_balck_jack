@@ -33,4 +33,19 @@ Carte* melangeCarte(char nbPaquetsParSabot, Carte sabot[]);
 
 Carte piocheCarte(Carte sabot[], int* callStackSabot, char nbPaquetsParSabot);
 
+/**
+ * \fn void distubutionInitialCartes(Joueur tableauJoueur[], CarteListeChaine *mainDealer, Parametre parametre, Carte sabot[], int* callStackSabot)
+ * \brief distibue les cartes au différent joueur et au deleur au début de la partie
+ * 
+ * \param Joueur tableauJoueur[] : tableau contenant tout les joueurs
+ * \param CarteListeChaine *mainDealer : liste chainée qui contient les cartes du dealer
+ * \param Parametre parametre : parametre utilisé pour la partie
+ * \param Carte sabot[] : tableau contenant les cartes du sabot
+ * \param int* callStackSabot : pointeur sur le call stack sabot
+ * \return void
+ * 
+ */
+
+void distubutionInitialCartes(Joueur tableauJoueur[], CarteListeChaine *mainDealer, Parametre parametre, Carte sabot[], int* callStackSabot);
+
 #endif //_GESTION_CARTE_H_

@@ -48,3 +48,23 @@ Carte piocheCarte(Carte sabot[], int *callStackSabot, char nbPaquetsParSabot)
     return sabot[*callStackSabot];   
 }
 
+void distubutionInitialCartes(Joueur tableauJoueur[], CarteListeChaine *mainDealer, Parametre parametre, Carte sabot[], int* callStackSabot)
+{
+    /* On brule les carte au début de la partie */
+    for (int i = 0; i < parametre.nbCarteBrule; i++)
+    {
+        piocheCarte(sabot, callStackSabot, parametre.nbJeuParSabot);
+    }
+    
+    /* On distibue 2 carte à chaque joueur et au dealer*/
+    for (int i = 0; i < 2; i++)
+    {
+        for (int j = 0; j < parametre.nbJoueur; j++)
+        {
+            insertionListeChainee(tableauJoueur[j].mainJoueur, piocheCarte(sabot, callStackSabot, parametre.nbJeuParSabot));
+        }
+        insertionListeChainee(mainDealer, piocheCarte(sabot, callStackSabot, parametre.nbJeuParSabot));        
+    }
+    
+}
+

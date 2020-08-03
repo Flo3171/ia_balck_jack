@@ -24,14 +24,15 @@ CarteListeChaine *initialistationListeChainee()
 
 void insertionListeChainee(CarteListeChaine *liste, Carte carteAAjouter)
 {
-    ElementCarteListeChaine *nouveauElement = malloc(sizeof(*nouveauElement));
+    ElementCarteListeChaine *nouveauElement = (ElementCarteListeChaine*)malloc(sizeof(*nouveauElement));
     if (liste == NULL || nouveauElement == NULL)
     {
         printf("ERREUR AJOUT LISTE CHAINEE");
         exit(EXIT_FAILURE);
     }
-    nouveauElement->carte = carteAAjouter;
     nouveauElement->suivant = liste->premier;
+    nouveauElement->carte = carteAAjouter;
+    
     
     liste->premier = nouveauElement;
     liste->nbElement ++;
@@ -76,7 +77,7 @@ void afficheListeChainee(CarteListeChaine *liste)
 
     ElementCarteListeChaine *actuel = liste->premier;
 
-    printf("La liste chainee contient : \n");
+    printf("La liste chainee contient %d element : \n", liste->nbElement);
     while (actuel != NULL)  
     {
         printf("%d\n", actuel->carte);
