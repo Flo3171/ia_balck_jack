@@ -12,6 +12,8 @@ set(SRCS
     src/affichage.c
     src/gestionDonnee.c
     src/listeChainee.c
+    src/ia.c
+    src/utilisateur.c
     )
 
 set (HEADERS
@@ -23,6 +25,8 @@ set (HEADERS
     src/affichage.h
     src/gestionDonnee.h
     src/listeChainee.h
+    src/ia.h
+    src/utilisateur.h
     )
 
 add_executable(Black_Jack ${SRCS} ${HEADERS})

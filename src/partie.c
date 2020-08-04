@@ -20,11 +20,11 @@ void joueBlackJack(Parametre parametre)
     {
         /*! On initialise chaque joueur selon les parametre de la partie */
         if (parametre.positionUtilisateur == i){
-            setJoueur(&tableauJoueur[i], HUMAIN, parametre.pactoleInitial, initialistationListeChainee(), PASSER, parametre.miseMini);
+            setJoueur(&tableauJoueur[i], MISE_HUMAIN, JOUE_HUMAIN, parametre.pactoleInitial, initialistationListeChainee(), PASSER, parametre.miseMini);
         }
         else
         {
-            setJoueur(&tableauJoueur[i], PASSE, parametre.pactoleInitial, initialistationListeChainee(), PASSER, parametre.miseMini);
+            setJoueur(&tableauJoueur[i], MINI, PASSE, parametre.pactoleInitial, initialistationListeChainee(), PASSER, parametre.miseMini);
         }
         /*printf("%d %d %d %d\n", tableauJoueur[0].caractere, tableauJoueur[0].choixJoueur, tableauJoueur[0].mise, tableauJoueur[0].pactole);*//*permet de controler que les joueur on été crée correctement */
     }
@@ -52,7 +52,20 @@ void joueBlackJack(Parametre parametre)
 
 void partie(Parametre parametre, Carte sabot[], int *callStackSabot, Joueur tableauJoueur[], CarteListeChaine *mainDealer)
 {
+    /* Chaqu'un des joueur choisit combien il mise durant cette partie */
+    for (int i = 0; i < parametre.nbJoueur; i++)
+    {
+        tableauJoueur[i].mise = choixMise(tableauJoueur[i], parametre);
+    }
+    
     /* On distibue deux cartes à chaque joueur et une au dealer*/
     distubutionInitialCartes(tableauJoueur, mainDealer, parametre, sabot, callStackSabot);
+
+    /* C'est le tour de chaque joueur de parler et d'anoncer ce qu'il veut faire */
+    for (int i = 0; i < parametre.nbJoueur; i++)
+    {
+        //choix jeu
+    }
+    
     
 }

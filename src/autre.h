@@ -51,33 +51,13 @@ void choisirParametre(Parametre *parametre);
 
 void setParametre(Parametre *parametre, int nbJeuParSabot, int nbJoueur, int nbCarteBrule, OuiNon abandont, int nbPaireMaxi, OuiNon doublerPaire, long miseMini, long miseMaxi, long pactoleInitial, int positionUtilisateur, int nbPartie);
 
-/**
- * \fn long acquisitionDoubleSecurisee()
- * \brief acquiert de manière sécurisée un double
- * 
- * \return long : le nombre saisi par l'utilisateur
-*/
-
-long acquisitionDoubleSecurisee();
-
-/**
- * \fn long acquisitionSansMessage(long mini, long maxi, char consigne[])
- * \brief réalise l'acquisistion d'un long sans message d'erreur en affichant à l'utilisateur une consigne
- * 
- * \param long mini : valeur minimum que doit avoir la valeur saisie
- * \param long maxi : valeur maximum que doit avoir la valeur saisie
- * \param char consigne[] : message à afficher à l'utilisateur lors de l'acuisition
- * \return long : valeur saisi par l'utilisateur et qui à été controler pour être entre les deux bornes
-*/
-
-long acquisitionSansMessage(long mini, long maxi, char consigne[]);
-
 /** 
- * \fn void setJoueur(Joueur *joueur, Caractere caractere, long pactole, CarteListeChaine *mainJoueur, Decision choixJoueur, long mise);
+ * \fn void setJoueur(Joueur *joueur, Mise caractereMise, Joue caractereJoue, long pactole, CarteListeChaine *mainJoueur, Decision choixJoueur, long mise);
  * \brief modifie une variable de type joueur 
  * 
  * \param Joueur *joueur : pointeur sur la variable joueur à modifier
- * \param Caractere caractere : carcactère du joueur
+ * \param Mise caractereMise : carctère du joueur quand il mise
+ * \param Joue caractereJoue : carctère du joueur quand il joue
  * \param long pactole : pactole du joueur
  * \param CarteListeChaine *mainJoueur : pointeur sur le premoer élément de la main du joueur 
  * \param Decision choixJoueur : action que le joueur va faire
@@ -85,7 +65,7 @@ long acquisitionSansMessage(long mini, long maxi, char consigne[]);
  * \return void
  */
 
-void setJoueur(Joueur *joueur, Caractere caractere, long pactole, CarteListeChaine *mainJoueur, Decision choixJoueur, long mise);
+void setJoueur(Joueur *joueur, Mise caractereMise, Joue caractereJoue, long pactole, CarteListeChaine *mainJoueur, Decision choixJoueur, long mise);
 
 
 #endif //_AUTRE_H_

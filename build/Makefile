@@ -647,6 +647,33 @@ src/gestionDonnee.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Black_Jack.dir\build.make CMakeFiles/Black_Jack.dir/src/gestionDonnee.c.s
 .PHONY : src/gestionDonnee.c.s
 
+src/ia.obj: src/ia.c.obj
+
+.PHONY : src/ia.obj
+
+# target to build an object file
+src/ia.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Black_Jack.dir\build.make CMakeFiles/Black_Jack.dir/src/ia.c.obj
+.PHONY : src/ia.c.obj
+
+src/ia.i: src/ia.c.i
+
+.PHONY : src/ia.i
+
+# target to preprocess a source file
+src/ia.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Black_Jack.dir\build.make CMakeFiles/Black_Jack.dir/src/ia.c.i
+.PHONY : src/ia.c.i
+
+src/ia.s: src/ia.c.s
+
+.PHONY : src/ia.s
+
+# target to generate assembly for a file
+src/ia.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Black_Jack.dir\build.make CMakeFiles/Black_Jack.dir/src/ia.c.s
+.PHONY : src/ia.c.s
+
 src/listeChainee.obj: src/listeChainee.c.obj
 
 .PHONY : src/listeChainee.obj
@@ -728,6 +755,33 @@ src/partie.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Black_Jack.dir\build.make CMakeFiles/Black_Jack.dir/src/partie.c.s
 .PHONY : src/partie.c.s
 
+src/utilisateur.obj: src/utilisateur.c.obj
+
+.PHONY : src/utilisateur.obj
+
+# target to build an object file
+src/utilisateur.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Black_Jack.dir\build.make CMakeFiles/Black_Jack.dir/src/utilisateur.c.obj
+.PHONY : src/utilisateur.c.obj
+
+src/utilisateur.i: src/utilisateur.c.i
+
+.PHONY : src/utilisateur.i
+
+# target to preprocess a source file
+src/utilisateur.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Black_Jack.dir\build.make CMakeFiles/Black_Jack.dir/src/utilisateur.c.i
+.PHONY : src/utilisateur.c.i
+
+src/utilisateur.s: src/utilisateur.c.s
+
+.PHONY : src/utilisateur.s
+
+# target to generate assembly for a file
+src/utilisateur.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Black_Jack.dir\build.make CMakeFiles/Black_Jack.dir/src/utilisateur.c.s
+.PHONY : src/utilisateur.c.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -780,6 +834,9 @@ help:
 	@echo ... src/gestionDonnee.obj
 	@echo ... src/gestionDonnee.i
 	@echo ... src/gestionDonnee.s
+	@echo ... src/ia.obj
+	@echo ... src/ia.i
+	@echo ... src/ia.s
 	@echo ... src/listeChainee.obj
 	@echo ... src/listeChainee.i
 	@echo ... src/listeChainee.s
@@ -789,6 +846,9 @@ help:
 	@echo ... src/partie.obj
 	@echo ... src/partie.i
 	@echo ... src/partie.s
+	@echo ... src/utilisateur.obj
+	@echo ... src/utilisateur.i
+	@echo ... src/utilisateur.s
 .PHONY : help
 
 

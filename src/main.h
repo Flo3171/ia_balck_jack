@@ -33,6 +33,8 @@
 #include "affichage.h"
 #include "gestionDonnee.h"
 #include "listeChainee.h"
+#include "ia.h"
+#include "utilisateur.h"
 
 
 #endif //MAIN_H_

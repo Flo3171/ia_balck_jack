@@ -153,41 +153,10 @@ void setParametre(Parametre *parametre, int nbJeuParSabot, int nbJoueur, int nbC
     parametre->nbPartie = nbPartie;
 }
 
-long acquisitionDoubleSecurisee()
+void setJoueur(Joueur *joueur, Mise caractereMise, Joue caractereJoue, long pactole, CarteListeChaine *mainJoueur, Decision choixJoueur, long mise)
 {
-    char nombreTexte[100] = {0};
-    fgets(nombreTexte, 100, stdin);
-    long nombre = strtol(nombreTexte, NULL, 10);
-    if (nombre == 0 && nombreTexte[0]!='0'){
-        nombre = -1;
-    }
-
-    /* On vide de buffer*/
-    char c = nombreTexte[strlen(nombreTexte) - 1];
-    while (c != '\n' && c != EOF)
-    {
-        c = getchar(); 
-    }
-    
-    return nombre;
-}
-
-
-long acquisitionSansMessage(long mini, long maxi, char consigne[])
-{
-    long valeurRetour = 0;
-    do
-    {
-        printf("%s\n", consigne);
-        valeurRetour = acquisitionDoubleSecurisee();
-    } while (valeurRetour < mini || valeurRetour > maxi);
-    return valeurRetour;
-    
-}
-
-void setJoueur(Joueur *joueur, Caractere caractere, long pactole, CarteListeChaine *mainJoueur, Decision choixJoueur, long mise)
-{
-    joueur->caractere = caractere;
+    joueur->caractere.mise = caractereMise;
+    joueur->caractere.joue = caractereJoue;
     joueur->pactole = pactole;
     joueur->mainJoueur = mainJoueur;
     joueur->choixJoueur = choixJoueur;

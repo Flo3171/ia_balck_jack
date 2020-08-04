@@ -59,16 +59,39 @@ typedef enum Decision{
     ABANDONNER = 4/*! Si autorisé par les paramètre, je joueur quitte la partie et récupère la moitiée de sa mise*/
 }Decision;
 
+/** 
+ * \enum Mise
+ * \brief caractère d'un joueur pour miser
+ */
+
+typedef enum Mise{
+    MISE_HUMAIN = 0,/*! le joueur est humain*/
+    MINI = 1,/*! l'ia mise toujour le minimum*/
+    DOUBLE_SI_PERT = 2 /*! l'ia mise le double de ce qu'elle a mise a la partie précédente si elle à perdu */
+}Mise;
+
 /**
- * \enum Caractere
- * \brief caractère d'un joueur, permet de savoir s'il s'aggit d'un humain ou d'une ia et si c'est une ia quelle modèle d'ia
+ * \enum Joue
+ * \brief caractère d'un joueur pour jouer durant la partie
 */
 
-typedef enum Caractere{
-    HUMAIN = 0, /*! Le joueur est un humain*/
-    PASSE = 1, /*! L'ai passe tout le temps*/
+typedef enum Joue{
+    JOUE_HUMAIN = 0, /*! Le joueur est un humain*/
+    PASSE = 1, /*! L'ia passe tout le temps*/
     BASIQUE = 2/*! L'ia joue selon les règles les plus basiques (sans compter les cartes)*/
+}Joue;
+
+/**
+ * \struct Caractere
+ * \brief caractère d'un joueur permet de savoir comment il va se comporter pour miser ou pour jouer
+ */
+
+typedef struct Caractere
+{
+    Mise mise;/*! caractère lors de la mise*/
+    Joue joue;/*! catactère lors de la partie*/
 }Caractere;
+
 
 /**
  * \struct ElementCarteListeChaine
