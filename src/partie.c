@@ -64,7 +64,17 @@ void partie(Parametre parametre, Carte sabot[], int *callStackSabot, Joueur tabl
     /* C'est le tour de chaque joueur de parler et d'anoncer ce qu'il veut faire */
     for (int i = 0; i < parametre.nbJoueur; i++)
     {
-        //choix jeu
+        do
+        {
+            do
+            {
+                /* Le joueur décide de ce qu'il veut faire*/
+                tableauJoueur[i].choixJoueur = decisionJeu(tableauJoueur[i], parametre);
+            } while (0/* on verifie que le joueur est bien autoriser a faire ce qu'il veut faire */);
+            
+            /* On applique ce qu'il veut faire (et on verifie que cela est correcte*/
+        } while (tableauJoueur[i].choixJoueur != PASSER && tableauJoueur[i].choixJoueur != DOUBLER);
+        
     }
     
     

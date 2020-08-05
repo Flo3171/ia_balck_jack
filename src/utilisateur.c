@@ -53,3 +53,32 @@ long choixMiseUtilisateur(Joueur joueur, Parametre parametre)
     return choix;
 }
 
+Decision decisionJeuHumain(Joueur joueur, Parametre parametre)
+{
+    printf("\nVous avez : ");
+    printf("\nLe dealeur a :");
+    printf("\nQuelle est votre decision ?\n1-Passer\n2-Tirer\n3-Doubler\n4-Splitter\n5-Abandonner");
+    switch (acquisitionSansMessage(1, 5, ""))
+    {
+    case 1:
+        return PASSER;
+        break;
+    case 2:
+        return TIRER;
+        break;
+    case 3:
+        return DOUBLER;
+        break;
+    case 4:
+        return SPLITTER;
+        break;
+    case 5:
+        return ABANDONNER;
+        break;
+
+    default:
+        return PASSER;
+        break;
+    }
+}
+

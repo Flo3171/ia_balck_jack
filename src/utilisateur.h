@@ -41,4 +41,15 @@ long acquisitionSansMessage(long mini, long maxi, char consigne[]);
 
 long choixMiseUtilisateur(Joueur joueur, Parametre parametre);
 
+/**
+ * \fn Decision decisionJeuHumain(Joueur joueur, Parametre parametre)
+ * \brief revoie la décision faite par un joueur humain
+ * 
+ * \param Joueur joueur : joueur qui doit faire prendre une décision
+ * \param Parametre parametre : parametre de la partie
+ * \return Decision : décision prise par le joueur
+ */ 
+
+Decision decisionJeuHumain(Joueur joueur, Parametre parametre);
+
 #endif //_UTILISATEUR_H_

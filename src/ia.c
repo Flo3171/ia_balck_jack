@@ -37,3 +37,17 @@ long choixMiseMini(Joueur joueur, Parametre parametre)
     
 }
 
+Decision decisionJeu(Joueur joueur, Parametre parametre)
+{
+    switch (joueur.caractere.joue)
+    {
+    case JOUE_HUMAIN:
+        return decisionJeuHumain(joueur, parametre);
+        break;
+    
+    default:
+        return PASSER;
+        break;
+    }
+}
+

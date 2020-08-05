@@ -31,4 +31,15 @@ long choixMise(Joueur joueur, Parametre parametre);
 
 long choixMiseMini(Joueur joueur, Parametre parametre);
 
+/** 
+ * \fn Decision decisionJeu(Joueur joueur, Parametre parametre)
+ * \brief revoie la décision faite par le joueu qu'elle que soit sont caractère
+ * 
+ * \param Joueur joueur : joueur qui doit faire prendre une décision
+ * \param Parametre parametre : parametre de la partie
+ * \return Decison : choix qui à été fait par le joueur
+ */
+
+Decision decisionJeu(Joueur joueur, Parametre parametre);
+
 #endif //_IA_H_
