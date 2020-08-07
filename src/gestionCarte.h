@@ -48,4 +48,14 @@ Carte piocheCarte(Carte sabot[], int* callStackSabot, char nbPaquetsParSabot);
 
 void distubutionInitialCartes(Joueur tableauJoueur[], CarteListeChaine *mainDealer, Parametre parametre, Carte sabot[], int* callStackSabot);
 
+/**
+ * \fn Point pointMain(CarteListeChaine *mainJoueur)
+ * \brief calcule le nombre de point que vaut une liste chainée de Carte au black Jack
+ * 
+ * \param CarteListeChaine *mainJoueur : liste chainé contenant la main à évaluer
+ * \return Point : revoie le nombre de point que vaut la main
+ */
+
+Point pointMain(CarteListeChaine *mainJoueur);
+
 #endif //_GESTION_CARTE_H_

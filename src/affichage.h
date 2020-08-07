@@ -29,6 +29,17 @@ void afficheOuiNon(OuiNon ouiNon);
 
 void afficheArgent(long argent);
 
+/**
+ * \fn void afficheMain(CarteListeChaine *mainJoueur, char nbCarteAAfficher)
+ * \brief affiche le conenue de la main d'un joueur
+ * 
+ * \param CarteListeChaine *mainJoueur : pointeur sur la liste chainée qui contient les carte a afficher
+ * \param char nbCarteAAfficher : indique le nombre de carte que l'on veut montrer mettre -1 pour toutes les afficher
+ * \return void
+ */
+
+void afficheMain(CarteListeChaine *mainJoueur, char nbCarteAAfficher);
+
 
 
 #endif //_AFFICHAGE_H_

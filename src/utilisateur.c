@@ -53,10 +53,37 @@ long choixMiseUtilisateur(Joueur joueur, Parametre parametre)
     return choix;
 }
 
-Decision decisionJeuHumain(Joueur joueur, Parametre parametre)
+Decision decisionJeuHumain(Joueur joueur,Carte carteDealer, Parametre parametre)
 {
     printf("\nVous avez : ");
-    printf("\nLe dealeur a :");
+    afficheMain(joueur.mainJoueur, -1);
+    printf("\nLe dealeur a : "); 
+    switch (carteDealer)
+            {
+            case AS:
+                printf("AS ");
+                break;
+            case ROI:
+                printf("ROI ");
+                break;
+            case DAME:
+                printf("DAME ");
+                break;
+            case VALET:
+                printf("VALET ");
+                break;    
+            default:
+                printf("%d ", carteDealer);
+                break;
+            }
+
+    printf("\nCela vaut (point) : ");
+    Point pointJoueur = pointMain(joueur.mainJoueur);
+    for (int i = 0; i <= pointJoueur.nbAs; i++)
+    {
+        printf("%d ", pointJoueur.nbPoint + i*10);
+    }
+
     printf("\nQuelle est votre decision ?\n1-Passer\n2-Tirer\n3-Doubler\n4-Splitter\n5-Abandonner");
     switch (acquisitionSansMessage(1, 5, ""))
     {

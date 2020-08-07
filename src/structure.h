@@ -78,7 +78,8 @@ typedef enum Mise{
 typedef enum Joue{
     JOUE_HUMAIN = 0, /*! Le joueur est un humain*/
     PASSE = 1, /*! L'ia passe tout le temps*/
-    BASIQUE = 2/*! L'ia joue selon les règles les plus basiques (sans compter les cartes)*/
+    DEALER = 2, /*! L'ia joue comme un dealer tire sur un 16 soft et reste sur un 17*/ 
+    BASIQUE = 3/*! L'ia joue selon les règles les plus basiques (sans compter les cartes)*/
 }Joue;
 
 /**
@@ -153,6 +154,18 @@ typedef struct Joueur
 
 
 }Joueur;
+
+/**
+ * \struct Point
+ * \brief nombre de point que vaut une main (peut valoir plusieur nombre à la fois a cause des As qui vallent 1 ou 11)
+ */
+
+typedef struct Point
+{
+    char nbPoint;
+    char nbAs;
+}Point;
+
 
 
 

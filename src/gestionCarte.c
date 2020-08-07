@@ -68,3 +68,42 @@ void distubutionInitialCartes(Joueur tableauJoueur[], CarteListeChaine *mainDeal
     
 }
 
+Point pointMain(CarteListeChaine *mainJoueur)
+{
+    Point pointMain;
+    pointMain.nbAs = 0;
+    pointMain.nbPoint = 0;
+
+    ElementCarteListeChaine *actuel = mainJoueur->premier;
+
+    while (actuel != NULL)
+    {
+        /* Traintement de la carte */
+        switch (actuel->carte)
+        {
+        case AS:
+            pointMain.nbAs ++;
+            pointMain.nbPoint += 1;
+            break;
+        case VALET:
+            pointMain.nbPoint += 10;
+            break;
+        case DAME:
+            pointMain.nbPoint += 10;
+            break;
+        case ROI:
+            pointMain.nbPoint += 10;
+            break;
+        default:
+            pointMain.nbPoint += actuel->carte;
+            break;
+        }
+        
+        actuel = actuel->suivant;
+    }
+
+    return pointMain;
+    
+    
+}
+

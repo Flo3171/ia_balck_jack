@@ -32,14 +32,39 @@ long choixMise(Joueur joueur, Parametre parametre);
 long choixMiseMini(Joueur joueur, Parametre parametre);
 
 /** 
- * \fn Decision decisionJeu(Joueur joueur, Parametre parametre)
+ * \fn Decision decisionJeu(Joueur joueur,Carte carteDealer, Parametre parametre)
  * \brief revoie la décision faite par le joueu qu'elle que soit sont caractère
  * 
  * \param Joueur joueur : joueur qui doit faire prendre une décision
+ * \param Carte carteDealer : carte visible du dealer
  * \param Parametre parametre : parametre de la partie
  * \return Decison : choix qui à été fait par le joueur
  */
 
-Decision decisionJeu(Joueur joueur, Parametre parametre);
+Decision decisionJeu(Joueur joueur,Carte carteDealer, Parametre parametre);
+
+/** 
+ * \fn Decision decisionJeuPasse(Joueur joueur, Carte carteDealer, Parametre parametre)
+ * \brief revoie la décision faite par le joueur dont le caractère est PASSE
+ * 
+ * \param Joueur joueur : joueur qui doit faire prendre une décision
+ * \param Carte carteDealer : carte visible du dealer
+ * \param Parametre parametre : parametre de la partie
+ * \return Decison : choix qui à été fait par le joueur
+ */
+
+Decision decisionJeuPasse(Joueur joueur, Carte carteDealer, Parametre parametre);
+
+/** 
+ * \fn Decision decisionJeuDealer(Joueur joueur,Carte carteDealer, Parametre parametre)
+ * \brief revoie la décision faite par le joueur dont le caractère est DEALER
+ * 
+ * \param Joueur joueur : joueur qui doit faire prendre une décision
+ * \param Carte carteDealer : carte visible du dealer
+ * \param Parametre parametre : parametre de la partie
+ * \return Decison : choix qui à été fait par le joueur
+ */
+
+Decision decisionJeuDealer(Joueur joueur,Carte carteDealer, Parametre parametre);
 
 #endif //_IA_H_

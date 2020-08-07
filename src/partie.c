@@ -69,7 +69,7 @@ void partie(Parametre parametre, Carte sabot[], int *callStackSabot, Joueur tabl
             do
             {
                 /* Le joueur décide de ce qu'il veut faire*/
-                tableauJoueur[i].choixJoueur = decisionJeu(tableauJoueur[i], parametre);
+                tableauJoueur[i].choixJoueur = decisionJeu(tableauJoueur[i], mainDealer->premier->carte, parametre);
             } while (0/* on verifie que le joueur est bien autoriser a faire ce qu'il veut faire */);
             
             /* On applique ce qu'il veut faire (et on verifie que cela est correcte*/
