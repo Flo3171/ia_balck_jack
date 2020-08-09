@@ -53,10 +53,20 @@ void supprimeToutListeChainee(CarteListeChaine *liste);
  * \fn void afficheListeChainee(CarteListeChaine *liste)
  * \brief affiche le contenue d'une liste chainée
  * 
- * \param CarteListeChainee *liste : pointeur sur la liste à supprimer
+ * \param CarteListeChainee *liste : pointeur sur la liste à afficher
  * \return void
 */
 
 void afficheListeChainee(CarteListeChaine *liste);
+
+/**
+ * \fn void videListeChainee(CarteListeChaine *liste)
+ * \brief vide une liste chainée de tout ces elements
+ * 
+ * \param CarteListeChainee *liste : pointeur sur la liste à vider
+ * \return void
+ */
+
+void videListeChainee(CarteListeChaine *liste);
 
 #endif //_LISTE_CHAINEE_H_

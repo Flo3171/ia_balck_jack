@@ -56,15 +56,8 @@ void supprimeListeChainee(CarteListeChaine *liste)
 
 void supprimeToutListeChainee(CarteListeChaine *liste)
 {
-    if (liste == NULL)
-    {
-        printf("ERREUR SUPPRESION TOUTE LISTE CHAINEE");
-        exit(EXIT_FAILURE);
-    }
-    while (liste->premier != NULL)
-    {
-        supprimeListeChainee(liste);
-    }
+    videListeChainee(liste);
+    free(liste);
 }
 
 void afficheListeChainee(CarteListeChaine *liste)
@@ -84,4 +77,17 @@ void afficheListeChainee(CarteListeChaine *liste)
         actuel = actuel->suivant;
     }
     printf("Fin liste chainee\n");
+}
+
+void videListeChainee(CarteListeChaine *liste)
+{
+    if (liste == NULL)
+    {
+        printf("ERREUR SUPPRESION TOUTE LISTE CHAINEE");
+        exit(EXIT_FAILURE);
+    }
+    while (liste->premier != NULL)
+    {
+        supprimeListeChainee(liste);
+    }
 }

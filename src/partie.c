@@ -70,12 +70,78 @@ void partie(Parametre parametre, Carte sabot[], int *callStackSabot, Joueur tabl
             {
                 /* Le joueur décide de ce qu'il veut faire*/
                 tableauJoueur[i].choixJoueur = decisionJeu(tableauJoueur[i], mainDealer->premier->carte, parametre);
-            } while (0/* on verifie que le joueur est bien autoriser a faire ce qu'il veut faire */);
+            } while (verifieDecision(tableauJoueur[i],  parametre)/* on verifie que le joueur est bien autoriser a faire ce qu'il veut faire */);
             
             /* On applique ce qu'il veut faire (et on verifie que cela est correcte*/
         } while (tableauJoueur[i].choixJoueur != PASSER && tableauJoueur[i].choixJoueur != DOUBLER);
         
     }
     
+    /* On vide les main des joueur et du dealer pour etre prêt pour la partie suivante */
+    for (int i = 0; i < parametre.nbJoueur; i++)
+    {
+           videListeChainee(tableauJoueur[i].mainJoueur); 
+    }
+    videListeChainee(mainDealer);
     
+}
+
+char verifieDecision(Joueur joueur, Parametre parametre)
+{
+    /*1 si l'action est imposible, 0 sinon*/
+    switch (joueur.choixJoueur)
+    {
+    case PASSER:
+        return 0;
+        break;
+    case TIRER:
+        if (pointMain(joueur.mainJoueur).nbPoint <= 21)
+        {
+            return 0;
+        }
+        else
+        {
+            return 1;
+        }
+        break;
+    case DOUBLER:
+        if (pointMain(joueur.mainJoueur).nbPoint <= 21 && joueur.pactole >= joueur.mise * 2 && joueur.mainJoueur->nbElement == 2)
+        {
+            return 0;
+        }
+        else
+        {
+            return 1;
+        }
+        break;
+    case SPLITTER:
+        if (joueur.mainJoueur->nbElement == 2 && joueur.mainJoueur->premier->carte == joueur.mainJoueur->premier->suivant->carte && joueur.pactole >= joueur.mise * 2)
+        {
+            return 0;
+        }
+        else
+        {
+            return 1;
+        }
+        
+        
+        break;
+    case ABANDONNER:
+        if (joueur.mainJoueur->nbElement == 2)
+        {
+            return 0;
+        }
+        else
+        {
+            return 1;
+        }
+        
+        break;
+        
+        
+    
+    default:
+        return 1;
+        break;
+    }
 }

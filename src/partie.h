@@ -37,6 +37,17 @@ void joueBlackJack(Parametre parametre);
 
 void partie(Parametre parametre, Carte sabot[], int *callStackSabot, Joueur tableauJoueur[], CarteListeChaine *mainDealer);
 
+/**
+ * \fn char verifieDecision(Joueur joueur, Parametre parametre)
+ * \brief permet de détemine si un joueur à le droit de prendre la décision qu'il veut prendre
+ * 
+ * \param Joueur joueur : joueur qui prend la désision
+ * \param Parametre parametre : parametre utilisté pour cette partie
+ * \return char : 1 si l'action est imposible, 0 sinon
+ */
+
+char verifieDecision(Joueur joueur, Parametre parametre);
+
 
 
 
