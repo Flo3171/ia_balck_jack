@@ -72,9 +72,9 @@ void partie(Parametre parametre, Carte sabot[], int *callStackSabot, Joueur tabl
                 tableauJoueur[i].choixJoueur = decisionJeu(tableauJoueur[i], mainDealer->premier->carte, parametre);
             } while (verifieDecision(tableauJoueur[i],  parametre)/* on verifie que le joueur est bien autoriser a faire ce qu'il veut faire */);
             
-            /* On applique ce qu'il veut faire (et on verifie que cela est correcte*/
-        } while (tableauJoueur[i].choixJoueur != PASSER && tableauJoueur[i].choixJoueur != DOUBLER);
-        
+            /* On applique ce qu'il veut faire*/
+            appliqueDecision(&tableauJoueur[i], parametre, sabot, callStackSabot);
+        } while (tableauJoueur[i].choixJoueur != PASSER && tableauJoueur[i].choixJoueur != DOUBLER && tableauJoueur[i].choixJoueur != ABANDONNER);
     }
     
     /* On vide les main des joueur et du dealer pour etre prêt pour la partie suivante */
@@ -123,8 +123,6 @@ char verifieDecision(Joueur joueur, Parametre parametre)
         {
             return 1;
         }
-        
-        
         break;
     case ABANDONNER:
         if (joueur.mainJoueur->nbElement == 2)
@@ -134,14 +132,30 @@ char verifieDecision(Joueur joueur, Parametre parametre)
         else
         {
             return 1;
-        }
-        
+        }  
         break;
-        
-        
-    
     default:
         return 1;
+        break;
+    }
+}
+
+void appliqueDecision(Joueur *joueur, Parametre parametre,  Carte sabot[], int *callStackSabot)
+{
+    switch (joueur->choixJoueur)
+    {
+    case TIRER:
+        insertionListeChainee(joueur->mainJoueur, piocheCarte(sabot, callStackSabot, parametre.nbJeuParSabot));
+        break;
+    case DOUBLER:
+        insertionListeChainee(joueur->mainJoueur, piocheCarte(sabot, callStackSabot, parametre.nbJeuParSabot));
+        joueur->mise *= 2;
+        break;
+    case SPLITTER:
+        /*panik*/
+        break;
+    
+    default:
         break;
     }
 }
