@@ -61,7 +61,8 @@ Decision decisionJeuPasse(Joueur joueur, Carte carteDealer, Parametre parametre)
 
 Decision decisionJeuDealer(Joueur joueur,Carte carteDealer, Parametre parametre)
 {
-    if(/*si le nombre de point est supérieur à 17*/0){
+    Point pointMainJoueur = pointMain(joueur.mainJoueur);
+    if(pointMainJoueur.nbPoint + pointMainJoueur.nbAs*10 >= 17/*si le nombre de point est supérieur à 17*/){
         return PASSER;
     }
     else

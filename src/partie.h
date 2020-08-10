@@ -61,6 +61,17 @@ char verifieDecision(Joueur joueur, Parametre parametre);
 
 void appliqueDecision(Joueur *joueur, Parametre parametre,  Carte sabot[], int *callStackSabot);
 
+/**
+ * \fn float determineVainqueur(Joueur *joueur, Parametre parametre, CarteListeChaine *mainDealer)
+ * \brief détermine si le joueur a gagné ou perdu
+ * 
+ * \param Joueur *joueur : joueur dont on veut déterminer la victoire
+ * \param Parametre parametre : parametre utilisé pour cette partie 
+ * \param CarteListeChaine *mainDealer : pointeur sur la liste chainée contenant la main du dealer
+ * \return float : revoie un coeficient qui appliqué a ça mise donne ce que le joueur va gagner ou perdre
+ */
+
+float determineVainqueur(Joueur *joueur, Parametre parametre, CarteListeChaine *mainDealer);
 
 
 #endif //_PARTIE_H_

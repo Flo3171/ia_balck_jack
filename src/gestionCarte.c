@@ -107,3 +107,14 @@ Point pointMain(CarteListeChaine *mainJoueur)
     
 }
 
+int pointFinalMain(CarteListeChaine *mainJoueur)
+{
+    Point point = pointMain(mainJoueur);
+    while (point.nbPoint + point.nbAs *10 > 21 && point.nbAs != 0)
+    {
+        point.nbAs --;
+    }
+    return point.nbPoint+ point.nbAs *10;
+    
+}
+
