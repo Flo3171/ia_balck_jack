@@ -53,4 +53,15 @@ long choixMiseUtilisateur(Joueur joueur, Parametre parametre);
 
 Decision decisionJeuHumain(CarteListeChaine *mainJoueur,Carte carteDealer, Parametre parametre);
 
+/**
+ * \fn long choixAssuranceHumain(CarteListeChaine *mainJoueur, long miseJoueur)
+ * \brief permet au joueur de type humain de choisir s'il prend une assurance
+ * 
+ * \param CarteListeChaine *mainJoueur : main du joueur
+ * \param long miseJoueur : mise que le joueur à choisie au début de la partie
+ * \return long : valeur de l'assurance prise par le joueur
+ */
+
+long choixAssuranceHumain(CarteListeChaine *mainJoueur, long miseJoueur);
+
 #endif //_UTILISATEUR_H_

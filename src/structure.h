@@ -177,6 +177,7 @@ typedef struct Joueur
     MainListeChaine *mainJoueur; /*! pointeur sur le premier élément de la liste chainée qui contient toutes les main du joueur*/
     Decision choixJoueur; /*! Action que le joueur à choisi de faire lorsque c'est sont tour de parler*/
     long mise; /*! mise choisie par le joueur pour la partie*/
+    long assurance; /*! Indique la valeur de l'assurance prise par le joueur */
 
 
 }Joueur;

@@ -68,4 +68,16 @@ Decision decisionJeuPasse(CarteListeChaine *mainJoueur, Carte carteDealer, Param
 
 Decision decisionJeuDealer(CarteListeChaine *mainJoueur ,Carte carteDealer, Parametre parametre);
 
+/**
+ * \fn long choixAssurance(CarteListeChaine *mainJoueur, long miseJoueur, Joue caractereJoue)
+ * \brief permet au joueur de choisir s'il veut prendre l'assurance ou non
+ * 
+ * \param CarteListeChaine *mainJoueur : carte que le joueur à en main
+ * \param long miseJoueur : mise que le joueur à choisi pour cette partie
+ * \param Joue carcetreJoue : caractère du joueur pour jouer
+ * \return long : valeur de l'assurance prise par le joueur
+ */
+
+long choixAssurance(CarteListeChaine *mainJoueur, long miseJoueur, Joue caractereJoue);
+
 #endif //_IA_H_

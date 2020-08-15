@@ -161,4 +161,5 @@ void setParametre(Parametre *parametre, int nbJeuParSabot, int nbJoueur, int nbC
     joueur->mainJoueur = mainJoueur;
     joueur->choixJoueur = choixJoueur;
     joueur->mise = mise;
+    joueur->assurance = 0;
 }

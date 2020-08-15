@@ -67,13 +67,24 @@ void partie(Parametre parametre, Carte sabot[], int *callStackSabot, Joueur tabl
     /* On distibue deux cartes à chaque joueur et une au dealer*/
     distubutionInitialCartes(tableauJoueur, mainDealer, parametre, sabot, callStackSabot);
 
+    /* si le dealer à un as on propose aux joueur de prendre une assurance*/
+    if (mainDealer->premier->carte == AS){
+        for (int i = 0; i < parametre.nbJoueur; i++)
+        {
+            tableauJoueur[i].assurance = choixAssurance(tableauJoueur[i].mainJoueur->premier->mainJoueur, tableauJoueur[i].mise, tableauJoueur[i].caractere.joue);
+            if(tableauJoueur[i].mise + tableauJoueur[i].assurance > tableauJoueur[i].pactole){
+                tableauJoueur[i].assurance = 0;
+            }
+        }
+    }
+    
+
     /* C'est le tour de chaque joueur de parler et d'anoncer ce qu'il veut faire */
     ElementMainListeChaine *mainATraiter = NULL;
     for (int i = 0; i < parametre.nbJoueur; i++)
     {
         if (tableauJoueur[i].mise > 0)  
-        {
-           
+        {  
             mainATraiter = tableauJoueur[i].mainJoueur->premier;
             do
             {
@@ -81,10 +92,14 @@ void partie(Parametre parametre, Carte sabot[], int *callStackSabot, Joueur tabl
                 {
                     do
                     {
-                        if (pointFinalMain(mainATraiter->mainJoueur) <= 21)
+                        if (pointFinalMain(mainATraiter->mainJoueur) < 21)
                         {
                             /* Le joueur décide de ce qu'il veut faire*/
                             tableauJoueur[i].choixJoueur = decisionJeu(tableauJoueur[i].caractere.joue, mainATraiter->mainJoueur, mainDealer->premier->carte, parametre);
+                        }
+                        else if(pointFinalMain(mainATraiter->mainJoueur) == 21)
+                        {
+                            tableauJoueur [i].choixJoueur = PASSER;
                         }
                         else
                         {
@@ -139,6 +154,22 @@ void partie(Parametre parametre, Carte sabot[], int *callStackSabot, Joueur tabl
         
     } while (decisionDealer != PASSER);
 
+    /* On paye les assurance */
+    if(mainDealer->premier->suivant->carte == AS && mainDealer->nbElement == 2 && pointFinalMain(mainDealer) == 21){
+        for (int i = 0; i < parametre.nbJoueur; i++)
+        {
+            tableauJoueur[i].pactole += tableauJoueur[i].assurance *2;
+        }    
+    }
+    else
+    {
+        for (int i = 0; i < parametre.nbJoueur; i++)
+        {
+            tableauJoueur[i].pactole -= tableauJoueur[i].assurance;
+        } 
+    }
+    
+
     /* On evalue les main par raport a celle du dealer et on paye tout le monde*/
     for (int i = 0; i < parametre.nbJoueur; i++)
     {
@@ -158,6 +189,7 @@ void partie(Parametre parametre, Carte sabot[], int *callStackSabot, Joueur tabl
     for (int i = 0; i < parametre.nbJoueur; i++)
     {
            videMain(tableauJoueur[i].mainJoueur); 
+           tableauJoueur[i].assurance = 0;
     }
     videListeChainee(mainDealer);
     

@@ -103,3 +103,19 @@ Decision decisionJeuHumain(CarteListeChaine *mainJoueur,Carte carteDealer, Param
     }
 }
 
+long choixAssuranceHumain(CarteListeChaine *mainJoueur, long miseJoueur)
+{
+    printf("\nVous avez : ");
+    afficheMain(mainJoueur, -1);
+    printf("\nCela vaut (point) : %d", pointFinalMain(mainJoueur));
+    printf("\nLe dealer a un AS, voulez vous prendre l'assurance d'une valeur egale a la moitiee de votre mise ?\n1-OUI \n2-NON");
+    if(acquisitionSansMessage(1,2,"") == 1){
+        return miseJoueur/2;
+    }     
+    else
+    {
+        return 0;
+    }
+    
+}
+

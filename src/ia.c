@@ -71,3 +71,17 @@ Decision decisionJeuDealer(CarteListeChaine *mainJoueur ,Carte carteDealer, Para
     
 }
 
+long choixAssurance(CarteListeChaine *mainJoueur, long miseJoueur, Joue caractereJoue)
+{
+    switch (caractereJoue)
+    {
+    case JOUE_HUMAIN:
+        choixAssuranceHumain(mainJoueur, miseJoueur);
+        break;
+    
+    default:
+        return 0;
+        break;
+    }
+}
+
