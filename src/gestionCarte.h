@@ -59,13 +59,13 @@ void distubutionInitialCartes(Joueur tableauJoueur[], CarteListeChaine *mainDeal
 Point pointMain(CarteListeChaine *mainJoueur);
 
 /**
- * \fn int pointFinalMain(CarteListeChaine *mainJoueur)
+ * \fn char pointFinalMain(CarteListeChaine *mainJoueur)
  * \brief donne le nombre de point le plus intérésant pour le joueur que vaut une main
  * 
  * \param CarteListeChaine *mainJoueur : liste chainé contenant la main à évaluer
- * \return int : revoie le nombre de point de la main
+ * \return char : revoie le nombre de point de la main
  */
 
-int pointFinalMain(CarteListeChaine *mainJoueur);
+char pointFinalMain(CarteListeChaine *mainJoueur);
 
 #endif //_GESTION_CARTE_H_

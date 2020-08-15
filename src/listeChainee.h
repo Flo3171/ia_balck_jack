@@ -69,4 +69,54 @@ void afficheListeChainee(CarteListeChaine *liste);
 
 void videListeChainee(CarteListeChaine *liste);
 
+/**
+ * \fn MainListeChaine *initialistationMain()
+ * \brief initilalise une liste chainée de type MainListeChaine
+ * 
+ * \return MainListeChaine * : pointeur sur la liste chainée qui vien d'être crée
+ */
+
+MainListeChaine *initialistationMain();
+
+/**
+ * \fn void ajouteMain(MainListeChaine *liste, CarteListeChaine *mainAAjouter)
+ * \brief ajoute un élément a la liste chainée de main
+ * 
+ * \param MainListeCjaine *liste : liste chainée de main à laquel on veut ajouter une main
+ * \param CarteListeChaine *mainAAjouter : pointeur sur la liste chainée de carte a ajouter si ce parametre vait NULL alors la liste sera crée
+ * \return void
+ */
+
+void ajouteMain(MainListeChaine *liste, CarteListeChaine *mainAAjouter);
+
+/**
+ * \fn void retireMain(MainListeChaine *liste)
+ * \brief retire une main d'une liste chainée de main+
+ * 
+ * \param MainListeChaine *liste : liste chainée de main dont on veut retirer un élément
+ * \return void
+ */
+
+void retireMain(MainListeChaine *liste);
+
+/**
+ * \fn void videMain(MainListeChaine *liste)
+ * \brief vide tout le contenu d'une liste chainée de main
+ * 
+ * \param MainListeChaine *liste : liste que l'on souhaite vider
+ * \return void
+ */
+
+void videMain(MainListeChaine *liste);
+
+/**
+ * \fn void supprimeToutMain(MainListeChaine *liste)
+ * \brief supprime la totalitée d'une liste chainée de main
+ * 
+ * \param MainListeChaine *liste : liste que l'on veut supprimer
+ * \return void
+ */
+
+void supprimeToutMain(MainListeChaine *liste);
+
 #endif //_LISTE_CHAINEE_H_

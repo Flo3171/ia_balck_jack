@@ -52,20 +52,20 @@ void choisirParametre(Parametre *parametre);
 void setParametre(Parametre *parametre, int nbJeuParSabot, int nbJoueur, int nbCarteBrule, OuiNon abandont, int nbPaireMaxi, OuiNon doublerPaire, long miseMini, long miseMaxi, long pactoleInitial, int positionUtilisateur, int nbPartie);
 
 /** 
- * \fn void setJoueur(Joueur *joueur, Mise caractereMise, Joue caractereJoue, long pactole, CarteListeChaine *mainJoueur, Decision choixJoueur, long mise);
+ * \fn void setJoueur(Joueur *joueur, Mise caractereMise, Joue caractereJoue, long pactole, MainListeChaine *mainJoueur, Decision choixJoueur, long mise)
  * \brief modifie une variable de type joueur 
  * 
  * \param Joueur *joueur : pointeur sur la variable joueur à modifier
  * \param Mise caractereMise : carctère du joueur quand il mise
  * \param Joue caractereJoue : carctère du joueur quand il joue
  * \param long pactole : pactole du joueur
- * \param CarteListeChaine *mainJoueur : pointeur sur le premoer élément de la main du joueur 
+ * \param MainListeChaine *mainJoueur : pointeur sur le premier élément de la liste chainée contenant les main du joueur  
  * \param Decision choixJoueur : action que le joueur va faire
  * \param long mise : mise du joueur pour la partie
  * \return void
  */
 
-void setJoueur(Joueur *joueur, Mise caractereMise, Joue caractereJoue, long pactole, CarteListeChaine *mainJoueur, Decision choixJoueur, long mise);
+void setJoueur(Joueur *joueur, Mise caractereMise, Joue caractereJoue, long pactole, MainListeChaine *mainJoueur, Decision choixJoueur, long mise);
 
 
 #endif //_AUTRE_H_

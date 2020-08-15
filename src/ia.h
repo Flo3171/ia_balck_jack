@@ -32,39 +32,40 @@ long choixMise(Joueur joueur, Parametre parametre);
 long choixMiseMini(Joueur joueur, Parametre parametre);
 
 /** 
- * \fn Decision decisionJeu(Joueur joueur,Carte carteDealer, Parametre parametre)
+ * \fn Decision decisionJeu(Joue caractereJoue, CarteListeChaine *mainJoueur, Carte carteDealer, Parametre parametre)
  * \brief revoie la décision faite par le joueu qu'elle que soit sont caractère
  * 
- * \param Joueur joueur : joueur qui doit faire prendre une décision
+ * \param Joue caractereJoue : caractère du Joueur
+ * \param CarteListeChainee *mainJoueur : pointeur sur la main du joueur à traiter
  * \param Carte carteDealer : carte visible du dealer
  * \param Parametre parametre : parametre de la partie
  * \return Decison : choix qui à été fait par le joueur
  */
 
-Decision decisionJeu(Joueur joueur,Carte carteDealer, Parametre parametre);
+Decision decisionJeu(Joue caractereJoue, CarteListeChaine *mainJoueur, Carte carteDealer, Parametre parametre);
 
 /** 
- * \fn Decision decisionJeuPasse(Joueur joueur, Carte carteDealer, Parametre parametre)
+ * \fn Decision decisionJeuPasse(CarteListeChaine *mainJoueur, Carte carteDealer, Parametre parametre)
  * \brief revoie la décision faite par le joueur dont le caractère est PASSE
  * 
- * \param Joueur joueur : joueur qui doit faire prendre une décision
+ * \param CarteListeChainee *mainJoueur : pointeur sur la main du joueur à traiter
  * \param Carte carteDealer : carte visible du dealer
  * \param Parametre parametre : parametre de la partie
  * \return Decison : choix qui à été fait par le joueur
  */
 
-Decision decisionJeuPasse(Joueur joueur, Carte carteDealer, Parametre parametre);
+Decision decisionJeuPasse(CarteListeChaine *mainJoueur, Carte carteDealer, Parametre parametre);
 
 /** 
- * \fn Decision decisionJeuDealer(Joueur joueur,Carte carteDealer, Parametre parametre)
+ * \fn Decision decisionJeuDealer(CarteListeChaine *mainJoueur ,Carte carteDealer, Parametre parametre)
  * \brief revoie la décision faite par le joueur dont le caractère est DEALER
  * 
- * \param Joueur joueur : joueur qui doit faire prendre une décision
+ * \param CarteListeChaine *mainJoueur : main pour laquel le joueur doit prendre une décision
  * \param Carte carteDealer : carte visible du dealer
  * \param Parametre parametre : parametre de la partie
  * \return Decison : choix qui à été fait par le joueur
  */
 
-Decision decisionJeuDealer(Joueur joueur,Carte carteDealer, Parametre parametre);
+Decision decisionJeuDealer(CarteListeChaine *mainJoueur ,Carte carteDealer, Parametre parametre);
 
 #endif //_IA_H_

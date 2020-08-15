@@ -37,15 +37,15 @@ long choixMiseMini(Joueur joueur, Parametre parametre)
     
 }
 
-Decision decisionJeu(Joueur joueur,Carte carteDealer, Parametre parametre)
+Decision decisionJeu(Joue caractereJoue, CarteListeChaine *mainJoueur, Carte carteDealer, Parametre parametre)
 {
-    switch (joueur.caractere.joue)
+    switch (caractereJoue)
     {
     case JOUE_HUMAIN:
-        return decisionJeuHumain(joueur,carteDealer, parametre);
+        return decisionJeuHumain(mainJoueur, carteDealer, parametre);
         break;
     case PASSE:
-        return decisionJeuPasse(joueur,carteDealer, parametre);
+        return decisionJeuPasse(mainJoueur, carteDealer, parametre);
         break;
     
     default:
@@ -54,15 +54,14 @@ Decision decisionJeu(Joueur joueur,Carte carteDealer, Parametre parametre)
     }
 }
 
-Decision decisionJeuPasse(Joueur joueur, Carte carteDealer, Parametre parametre)
+Decision decisionJeuPasse(CarteListeChaine *mainJoueur, Carte carteDealer, Parametre parametre)
 {
     return PASSER;
 }
 
-Decision decisionJeuDealer(Joueur joueur,Carte carteDealer, Parametre parametre)
+Decision decisionJeuDealer(CarteListeChaine *mainJoueur ,Carte carteDealer, Parametre parametre)
 {
-    Point pointMainJoueur = pointMain(joueur.mainJoueur);
-    if(pointMainJoueur.nbPoint + pointMainJoueur.nbAs*10 >= 17/*si le nombre de point est supérieur à 17*/){
+    if(pointFinalMain(mainJoueur) >= 17){
         return PASSER;
     }
     else

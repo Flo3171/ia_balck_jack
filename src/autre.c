@@ -153,7 +153,7 @@ void setParametre(Parametre *parametre, int nbJeuParSabot, int nbJoueur, int nbC
     parametre->nbPartie = nbPartie;
 }
 
-void setJoueur(Joueur *joueur, Mise caractereMise, Joue caractereJoue, long pactole, CarteListeChaine *mainJoueur, Decision choixJoueur, long mise)
+ void setJoueur(Joueur *joueur, Mise caractereMise, Joue caractereJoue, long pactole, MainListeChaine *mainJoueur, Decision choixJoueur, long mise)
 {
     joueur->caractere.mise = caractereMise;
     joueur->caractere.joue = caractereJoue;

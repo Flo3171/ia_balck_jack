@@ -55,13 +55,21 @@ void distubutionInitialCartes(Joueur tableauJoueur[], CarteListeChaine *mainDeal
     {
         piocheCarte(sabot, callStackSabot, parametre.nbJeuParSabot);
     }
+    /* On ajoute une main à chaque joueur */
+    for (int i = 0; i < parametre.nbJoueur; i++)
+    {
+        ajouteMain(tableauJoueur[i].mainJoueur, NULL);
+    }
+    
     
     /* On distibue 2 carte à chaque joueur et au dealer*/
     for (int i = 0; i < 2; i++)
     {
         for (int j = 0; j < parametre.nbJoueur; j++)
         {
-            insertionListeChainee(tableauJoueur[j].mainJoueur, piocheCarte(sabot, callStackSabot, parametre.nbJeuParSabot));
+            if(tableauJoueur[j].mise > 0){
+                insertionListeChainee(tableauJoueur[j].mainJoueur->premier->mainJoueur, piocheCarte(sabot, callStackSabot, parametre.nbJeuParSabot));
+            }    
         }
         insertionListeChainee(mainDealer, piocheCarte(sabot, callStackSabot, parametre.nbJeuParSabot));        
     }
@@ -107,14 +115,15 @@ Point pointMain(CarteListeChaine *mainJoueur)
     
 }
 
-int pointFinalMain(CarteListeChaine *mainJoueur)
+char pointFinalMain(CarteListeChaine *mainJoueur)
 {
     Point point = pointMain(mainJoueur);
     while (point.nbPoint + point.nbAs *10 > 21 && point.nbAs != 0)
     {
         point.nbAs --;
     }
-    return point.nbPoint+ point.nbAs *10;
+    char retour = point.nbPoint + (point.nbAs *10);
+    return retour;
     
 }
 

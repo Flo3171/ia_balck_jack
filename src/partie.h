@@ -38,40 +38,48 @@ void joueBlackJack(Parametre parametre);
 void partie(Parametre parametre, Carte sabot[], int *callStackSabot, Joueur tableauJoueur[], CarteListeChaine *mainDealer);
 
 /**
- * \fn char verifieDecision(Joueur joueur, Parametre parametre)
+ * \fn char verifieDecision(Decision choixJoueur, CarteListeChaine *mainJoueur, long pactoleJoueur, long miseJoueur, Parametre parametre)
  * \brief permet de détemine si un joueur à le droit de prendre la décision qu'il veut prendre
  * 
- * \param Joueur joueur : joueur qui prend la désision
+ * \param Decision choixJoueur : décison prise par le joueur 
+ * \param CarteListeChainee *mainJoueur : main du joueur à traiter
+ * \param long pactoleJoueur : argent que le joueur possède
+ * \param long miseJoueur : mise du joueur
  * \param Parametre parametre : parametre utilisé pour cette partie
  * \return char : 1 si l'action est imposible, 0 sinon
  */
 
-char verifieDecision(Joueur joueur, Parametre parametre);
+char verifieDecision(Decision choixJoueur, CarteListeChaine *mainJoueur, long pactoleJoueur, long miseJoueur, Parametre parametre);
 
 /**
- * \fn void appliqueDecision(Joueur *joueur, Parametre parametre,  Carte sabot[], int *callStackSabot)
+ * \fn void appliqueDecision(Decision choixJoueur, CarteListeChaine *mainATraiter, Joue caractereJoue, long *miseJoueur, MainListeChaine *mainJoueur, Parametre parametre,  Carte sabot[], int *callStackSabot)
  * \brief on applique la décision qui à été prise par le joueur
  * 
- * \param Joueur *joueur : joueur qui prend la décision
+ * \param Decision choixJoueur : choix fait par le joueur
+ * \param CarteListeChainee *mainATraiter : main du joueur à traiter
+ * \param Joue caractereJoue : caractère du joueur pour jouer
+ * \param long *miseJoueur : mise du joueur
+ * \param MainListeChaine *mainJoueur : pointeur sur la liste chainée de main associée au joueur
  * \param Parametre parametre : parametre utilisé pour cette partie
  * \param Carte sabot[] : tableau contenant les cartes du sabot
  * \param int *callStackSabot : pointeur sur l'indice du tableau ou piocher la carte suivant
  * \return void
  */
 
-void appliqueDecision(Joueur *joueur, Parametre parametre,  Carte sabot[], int *callStackSabot);
+void appliqueDecision(Decision choixJoueur, CarteListeChaine *mainATraiter, Joue caractereJoue, long *miseJoueur, MainListeChaine *mainJoueur, Parametre parametre,  Carte sabot[], int *callStackSabot);
 
 /**
- * \fn float determineVainqueur(Joueur *joueur, Parametre parametre, CarteListeChaine *mainDealer)
+ * \fn float determineVainqueur(CarteListeChaine *mainJoueur, Decision choixJoueur, Parametre parametre, CarteListeChaine *mainDealer)
  * \brief détermine si le joueur a gagné ou perdu
  * 
- * \param Joueur *joueur : joueur dont on veut déterminer la victoire
+ * \param CarteListeChaine *mainJoueur : main du joueur dont on veut savoir si elle a gagné ou non
+ * \param Decision choixJoueur : décision que le joueur à prise
  * \param Parametre parametre : parametre utilisé pour cette partie 
  * \param CarteListeChaine *mainDealer : pointeur sur la liste chainée contenant la main du dealer
  * \return float : revoie un coeficient qui appliqué a ça mise donne ce que le joueur va gagner ou perdre
  */
 
-float determineVainqueur(Joueur *joueur, Parametre parametre, CarteListeChaine *mainDealer);
+float determineVainqueur(CarteListeChaine *mainJoueur, Decision choixJoueur, Parametre parametre, CarteListeChaine *mainDealer);
 
 
 #endif //_PARTIE_H_

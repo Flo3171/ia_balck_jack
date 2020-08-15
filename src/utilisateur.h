@@ -42,15 +42,15 @@ long acquisitionSansMessage(long mini, long maxi, char consigne[]);
 long choixMiseUtilisateur(Joueur joueur, Parametre parametre);
 
 /**
- * \fn Decision decisionJeuHumain(Joueur joueur,Carte carteDealer, Parametre parametre)
+ * \fn Decision decisionJeuHumain(CarteListeChaine *mainJoueur,Carte carteDealer, Parametre parametre)
  * \brief revoie la décision faite par un joueur humain
  * 
- * \param Joueur joueur : joueur qui doit faire prendre une décision
+ * \param CarteListeChainee *mainJoueur : pointeur sur la main du jouer a traiter
  * \param Carte carteDealer : carte visible du dealer
  * \param Parametre parametre : parametre de la partie
  * \return Decision : décision prise par le joueur
  */ 
 
-Decision decisionJeuHumain(Joueur joueur,Carte carteDealer, Parametre parametre);
+Decision decisionJeuHumain(CarteListeChaine *mainJoueur,Carte carteDealer, Parametre parametre);
 
 #endif //_UTILISATEUR_H_

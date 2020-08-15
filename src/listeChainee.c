@@ -10,7 +10,7 @@
 
 CarteListeChaine *initialistationListeChainee()
 {
-    CarteListeChaine *liste = malloc(sizeof(*liste));
+    CarteListeChaine *liste = (CarteListeChaine*)malloc(sizeof(*liste));
 
     if (liste == NULL){
         printf("ERREUR CREATION LISTE CHAINEE");
@@ -83,7 +83,7 @@ void videListeChainee(CarteListeChaine *liste)
 {
     if (liste == NULL)
     {
-        printf("ERREUR SUPPRESION TOUTE LISTE CHAINEE");
+        printf("ERREUR VIDAGE LISTE CHAINEE");
         exit(EXIT_FAILURE);
     }
     while (liste->premier != NULL)
@@ -91,3 +91,75 @@ void videListeChainee(CarteListeChaine *liste)
         supprimeListeChainee(liste);
     }
 }
+
+
+MainListeChaine *initialistationMain()
+{
+    MainListeChaine *liste = (MainListeChaine*)malloc(sizeof(*liste));
+
+    if (liste == NULL){
+        printf("ERREUR CREATION MAIN");
+        exit(EXIT_FAILURE);
+    }
+    liste->premier = NULL;
+    liste->nbElement = 0;
+}
+
+void ajouteMain(MainListeChaine *liste, CarteListeChaine *mainAAjouter)
+{
+    ElementMainListeChaine *nouveauElement = (ElementMainListeChaine*)malloc(sizeof(*nouveauElement));
+    if (nouveauElement == NULL)
+    {
+        printf("ERREUR AJOUT MAIN");
+        exit(EXIT_FAILURE);
+    }
+    nouveauElement->suivant = liste->premier;
+    if (mainAAjouter == NULL)
+    {
+        nouveauElement->mainJoueur = initialistationListeChainee();    
+    }
+    else
+    {
+        nouveauElement->mainJoueur = mainAAjouter;
+    }
+
+    liste->premier = nouveauElement;
+    liste->nbElement ++;
+}
+
+void retireMain(MainListeChaine *liste)
+{
+    if (liste == NULL)
+    {
+        printf("ERREUR SUPPRESION LISTE CHAINEE");
+        exit(EXIT_FAILURE);
+    }
+    
+    if (liste->premier != NULL){
+        ElementMainListeChaine *aSupprimer = liste->premier;
+        liste->premier = liste->premier->suivant;
+        supprimeToutListeChainee(aSupprimer->mainJoueur);
+        free(aSupprimer);
+        liste->nbElement --;
+    }
+}
+
+void videMain(MainListeChaine *liste)
+{
+    if (liste == NULL){
+        printf("ERREUR VIDAGE LISTE CHAINEE");
+        exit(EXIT_FAILURE);
+    }
+    while (liste->premier != NULL)
+    {
+        retireMain(liste);
+    }
+    
+}
+
+void supprimeToutMain(MainListeChaine *liste)
+{
+    videMain(liste);
+    free(liste);
+}
+

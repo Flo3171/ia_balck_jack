@@ -118,6 +118,32 @@ typedef struct CarteListeChaine
     double nbElement; /*! Le nombre l'émément dans la liste*/
 }CarteListeChaine;
 
+/**
+ * \struct ElementMainListeChaine
+ * \brief un élément de la liste chainée contenant une liste chainé contenant des cartes
+ */
+
+typedef struct ElementMainListeChaine ElementMainListeChaine;
+struct ElementMainListeChaine
+{
+    CarteListeChaine *mainJoueur; /*! donne la liste chainée contenant la main du joueur */
+    ElementMainListeChaine *suivant; /*! élément suivant dans la liste chainée*/
+
+};
+
+/**
+ * \struct MainListeChaine
+ * \brief premier élément de la liste chainée contenant des liste chainée contenant des carte
+ */
+
+typedef struct MainListeChaine
+{
+    ElementMainListeChaine *premier;/*! Pointeur sur le premier élément de la liste chainée*/
+    int nbElement; /*! Nombre d'élément contenue dans la liste chainée*/
+
+}MainListeChaine;
+
+
 
 /**
  * \struct Parametre
@@ -148,7 +174,7 @@ typedef struct Joueur
 {
     Caractere caractere; /*! facon de jouer qu'aura le joueur (humain ou ia et quel type d'ia)*/
     long pactole; /*! Somme d'argent que le joueur possède*/
-    CarteListeChaine *mainJoueur; /*! pointeur sur le premier élément de la liste chainée qui contient toutes les cartes que le joueur à en main*/
+    MainListeChaine *mainJoueur; /*! pointeur sur le premier élément de la liste chainée qui contient toutes les main du joueur*/
     Decision choixJoueur; /*! Action que le joueur à choisi de faire lorsque c'est sont tour de parler*/
     long mise; /*! mise choisie par le joueur pour la partie*/
 
