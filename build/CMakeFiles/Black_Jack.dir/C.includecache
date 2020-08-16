@@ -6,45 +6,17 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/affichage.c
-main.h
-C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/main.h
-
 C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/affichage.h
-
-C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/autre.c
-main.h
-C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/main.h
 
 C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/autre.h
 
-C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/gestionCarte.c
-main.h
-C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/main.h
-
 C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/gestionCarte.h
-
-C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/gestionDonnee.c
-main.h
-C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/main.h
 
 C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/gestionDonnee.h
 
-C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/ia.c
-main.h
-C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/main.h
-
 C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/ia.h
 
-C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/listeChainee.c
-main.h
-C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/main.h
-
 C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/listeChainee.h
-
-C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/main.c
-main.h
-C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/main.h
 
 C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/main.h
 structure.h
@@ -83,10 +55,6 @@ C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/proje
 C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/partie.h
 
 C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/structure.h
-
-C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/utilisateur.c
-main.h
-C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/main.h
 
 C:/Users/flocl/OneDrive - Universite De Technologie De Belfort-Montbeliard/projet perso/projet black jack/ia_balck_jack/src/utilisateur.h
 

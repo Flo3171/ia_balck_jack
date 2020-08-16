@@ -7,21 +7,29 @@
 */
 #include "main.h"
 
-
-Carte* melangeCarte(char nbPaquetsParSabot, Carte sabot[])
+Sabot *initialisationSabot(int nbJeuParSabot)
 {
-    int nbCarteSabot = NB_CARTE_PAQUETS * nbPaquetsParSabot;
+    Sabot *sabot = (Sabot*)malloc(sizeof(Sabot));
+    sabot->tableauCarte = (Carte*)malloc(sizeof(Carte) * nbJeuParSabot * NB_CARTE_PAQUETS);
+    sabot->callStackSabot = 0;
+    sabot->nbPaquetParSabot = nbJeuParSabot;
+
+    return sabot;
+
+}
+
+
+void melangeCarte(Sabot *sabot)
+{
+    int nbCarteSabot = NB_CARTE_PAQUETS * sabot->nbPaquetParSabot;
     int curseurSabot = 0, aEchanger = 0;
     Carte carteTampon = SANS_VALEUR;
-    if (sabot == NULL){ /*! Si le tableau n'a pas déja été crée alors on le crée*/
-       sabot = (Carte*) malloc(sizeof(Carte) * nbPaquetsParSabot); 
-    }
     /*! On place dans le tableau toutes les cartes qu'il doit contenir*/
-    for (int i = 0; i < nbPaquetsParSabot * NB_FAMILLE_PAQUETS; i++)
+    for (int i = 0; i < sabot->nbPaquetParSabot * NB_FAMILLE_PAQUETS; i++)
     {
         for (int j = 1; j <= 13; j++)
         {
-           sabot[curseurSabot] = j;
+           sabot->tableauCarte[curseurSabot] = j;
             curseurSabot ++; 
         }
     }
@@ -30,30 +38,29 @@ Carte* melangeCarte(char nbPaquetsParSabot, Carte sabot[])
     for (int i = nbCarteSabot - 1; i >= 1; i--)
     {
        aEchanger = nbAleatoire(0, i);
-       carteTampon = sabot[i];
-       sabot[i] = sabot[aEchanger];
-       sabot[aEchanger] = carteTampon; 
+       carteTampon = sabot->tableauCarte[i];
+       sabot->tableauCarte[i] = sabot->tableauCarte[aEchanger];
+       sabot->tableauCarte[aEchanger] = carteTampon; 
     }
-    return sabot;
 }
 
-Carte piocheCarte(Carte sabot[], int *callStackSabot, char nbPaquetsParSabot)
+Carte piocheCarte(Sabot *sabot)
 {
-    *callStackSabot -= 1;
+    sabot->callStackSabot --;
     /*! Si le sabot est vide on le remplie de carte*/
-    if (*callStackSabot == -1){
-        melangeCarte(nbPaquetsParSabot, sabot);
-        *callStackSabot = NB_CARTE_PAQUETS*nbPaquetsParSabot -1;
+    if (sabot->callStackSabot == -1){
+        melangeCarte(sabot);
+        sabot->callStackSabot = NB_CARTE_PAQUETS * sabot->nbPaquetParSabot -1;
     }
-    return sabot[*callStackSabot];   
+    return sabot->tableauCarte[sabot->callStackSabot];   
 }
 
-void distubutionInitialCartes(Joueur tableauJoueur[], CarteListeChaine *mainDealer, Parametre parametre, Carte sabot[], int* callStackSabot)
+void distubutionInitialCartes(Joueur tableauJoueur[], CarteListeChaine *mainDealer, Parametre parametre, Sabot *sabot)
 {
     /* On brule les carte au début de la partie */
     for (int i = 0; i < parametre.nbCarteBrule; i++)
     {
-        piocheCarte(sabot, callStackSabot, parametre.nbJeuParSabot);
+        piocheCarte(sabot);
     }
     /* On ajoute une main à chaque joueur */
     for (int i = 0; i < parametre.nbJoueur; i++)
@@ -68,10 +75,10 @@ void distubutionInitialCartes(Joueur tableauJoueur[], CarteListeChaine *mainDeal
         for (int j = 0; j < parametre.nbJoueur; j++)
         {
             if(tableauJoueur[j].mise > 0){
-                insertionListeChainee(tableauJoueur[j].mainJoueur->premier->mainJoueur, piocheCarte(sabot, callStackSabot, parametre.nbJeuParSabot));
+                insertionListeChainee(tableauJoueur[j].mainJoueur->premier->mainJoueur, piocheCarte(sabot));
             }    
         }
-        insertionListeChainee(mainDealer, piocheCarte(sabot, callStackSabot, parametre.nbJeuParSabot));        
+        insertionListeChainee(mainDealer, piocheCarte(sabot));        
     }
     
 }

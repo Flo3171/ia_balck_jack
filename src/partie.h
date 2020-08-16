@@ -24,18 +24,17 @@
 void joueBlackJack(Parametre parametre);
 
 /**
- * \fn void partie(Parametre parametre, Carte sabot[], int *callStackSabot, Joueur tableauJoueur[], CarteListeChaine *mainDealer)
+ * \fn void partie(Parametre parametre, Sabot *sabot, Joueur tableauJoueur[], CarteListeChaine *mainDealer)
  * \brief joue une partie de black jack
  * 
  * \param Parametre parametre : les paramètre qui doivent être appliqués à la partie 
- * \param Carte sabot[] : tableau contenant les cartes du sabot
- * \param int *callStackSabot : pointeur sur l'indice du tableau ou piocher la carte suivant
+ * \param Sabot *sabot : sabot contenant les cartes qui seront distribuée au joueurs
  * \param Joueur tableauJoueur[] : tableau contenant les différent joueur
  * \param CarteListeChaine *mainDealer :  liste chainée qui contient les carte du dealer
  * \return void
 */
 
-void partie(Parametre parametre, Carte sabot[], int *callStackSabot, Joueur tableauJoueur[], CarteListeChaine *mainDealer);
+void partie(Parametre parametre, Sabot *sabot, Joueur tableauJoueur[], CarteListeChaine *mainDealer);
 
 /**
  * \fn char verifieDecision(Decision choixJoueur, CarteListeChaine *mainJoueur, long pactoleJoueur, long miseJoueur, Parametre parametre)
@@ -52,7 +51,7 @@ void partie(Parametre parametre, Carte sabot[], int *callStackSabot, Joueur tabl
 char verifieDecision(Decision choixJoueur, CarteListeChaine *mainJoueur, long pactoleJoueur, long miseJoueur, Parametre parametre);
 
 /**
- * \fn void appliqueDecision(Decision choixJoueur, CarteListeChaine *mainATraiter, Joue caractereJoue, long *miseJoueur, MainListeChaine *mainJoueur, Parametre parametre,  Carte sabot[], int *callStackSabot)
+ * \fn void appliqueDecision(Decision choixJoueur, CarteListeChaine *mainATraiter, Joue caractereJoue, long *miseJoueur, MainListeChaine *mainJoueur, Parametre parametre,  Sabot *sabot)
  * \brief on applique la décision qui à été prise par le joueur
  * 
  * \param Decision choixJoueur : choix fait par le joueur
@@ -61,12 +60,11 @@ char verifieDecision(Decision choixJoueur, CarteListeChaine *mainJoueur, long pa
  * \param long *miseJoueur : mise du joueur
  * \param MainListeChaine *mainJoueur : pointeur sur la liste chainée de main associée au joueur
  * \param Parametre parametre : parametre utilisé pour cette partie
- * \param Carte sabot[] : tableau contenant les cartes du sabot
- * \param int *callStackSabot : pointeur sur l'indice du tableau ou piocher la carte suivant
+ * \param Sabot *sabot : sabot contenant les cartes qui seront distrubuée au joueurs
  * \return void
  */
 
-void appliqueDecision(Decision choixJoueur, CarteListeChaine *mainATraiter, Joue caractereJoue, long *miseJoueur, MainListeChaine *mainJoueur, Parametre parametre,  Carte sabot[], int *callStackSabot);
+void appliqueDecision(Decision choixJoueur, CarteListeChaine *mainATraiter, Joue caractereJoue, long *miseJoueur, MainListeChaine *mainJoueur, Parametre parametre,  Sabot *sabot);
 
 /**
  * \fn float determineVainqueur(CarteListeChaine *mainJoueur, Decision choixJoueur, Parametre parametre, CarteListeChaine *mainDealer)

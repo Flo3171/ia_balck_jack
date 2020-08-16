@@ -83,6 +83,19 @@ typedef enum Joue{
 }Joue;
 
 /**
+ * \struct Sabot
+ * \brief sabot contenant les cartes qui seront distribuée
+ */
+
+typedef struct Sabot
+{
+    Carte *tableauCarte; /*! Pointeur sur le tableau de carte qui contient les cartes du sabot */
+    int callStackSabot; /*! Indice dans le tableau de la carte à distribuer */
+    int nbPaquetParSabot; /*! le nombre de paquet de carte qui sont mis dans le sabot */
+}Sabot;
+
+
+/**
  * \struct Caractere
  * \brief caractère d'un joueur permet de savoir comment il va se comporter pour miser ou pour jouer
  */

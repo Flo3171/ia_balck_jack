@@ -10,43 +10,49 @@
 */
 
 /**
- * \fn Carte* melangeCarte(char nbPaquetsParSabot, Carte sabot[])
- * \brief mélange les carte afin d'obtenir un tableau de carte mélangé
+ * \fn Sabot *initialisationSabot(int nbJeuParSabot)
+ * \brief initialise une variable de type Sabot
  * 
- * \param char nbPaquetsParSabot : indique le nombres de jeux de cartes utilisé dans un sabot
- * \param Carte sabot[] : tableau qui contient les cartes du sabot (mettre NULL si le tableau n'a pas encore été crée)
- * \return Carte * : pointeur sur le tableau de carte qui a été
-*/
+ * \param int nbJeuParSabot : nombre de jeu de carte par sabot
+ * \return Sabot *: pointeur sur le sabot qui à été créé
+ */
 
-Carte* melangeCarte(char nbPaquetsParSabot, Carte sabot[]);
+Sabot *initialisationSabot(int nbJeuParSabot);
 
 /**
- * \fn Carte piocheCarte(Carte sabot[], int* callStackSabot, char nbPaquetsParSabot)
+ * \fn void melangeCarte(Sabot *sabot)
+ * \brief mélange les carte afin d'obtenir un tableau de carte mélangé
+ * 
+ * \param Sabot *sabot : Sabot qui contient les cartes qui seront distribuée au joueurs
+ * \return void
+*/
+
+void melangeCarte(Sabot *sabot);
+
+/**
+ * \fn Carte piocheCarte(Sabot *sabot)
  * \brief pioche une carte dans le sabot et renvoie la carte qui a été piochée
  * 
- * \param Carte sabot[] : tableau contenant les cartes du sabot
- * \param int* callStackSabot : pointeur sur le call stack sabot
- * \param char nbPaquetsParSabot : indique le nombres de jeux de cartes utilisé dans un sabot
+ * \param Sabot *sabot : sabot contenant les cartes qui seront distibuée au joueurs
  * \return Carte : renvoie la carte qui à été piochée
  * 
  */
 
-Carte piocheCarte(Carte sabot[], int* callStackSabot, char nbPaquetsParSabot);
+Carte piocheCarte(Sabot *sabot);
 
 /**
- * \fn void distubutionInitialCartes(Joueur tableauJoueur[], CarteListeChaine *mainDealer, Parametre parametre, Carte sabot[], int* callStackSabot)
+ * \fn void distubutionInitialCartes(Joueur tableauJoueur[], CarteListeChaine *mainDealer, Parametre parametre, Sabot *sabot)
  * \brief distibue les cartes au différent joueur et au deleur au début de la partie
  * 
  * \param Joueur tableauJoueur[] : tableau contenant tout les joueurs
  * \param CarteListeChaine *mainDealer : liste chainée qui contient les cartes du dealer
  * \param Parametre parametre : parametre utilisé pour la partie
- * \param Carte sabot[] : tableau contenant les cartes du sabot
- * \param int* callStackSabot : pointeur sur le call stack sabot
+ * \param Sabot *sabot : sabot qui contient toutes les cartes qui seront distribuée au joueurs
  * \return void
  * 
  */
 
-void distubutionInitialCartes(Joueur tableauJoueur[], CarteListeChaine *mainDealer, Parametre parametre, Carte sabot[], int* callStackSabot);
+void distubutionInitialCartes(Joueur tableauJoueur[], CarteListeChaine *mainDealer, Parametre parametre, Sabot *sabot);
 
 /**
  * \fn Point pointMain(CarteListeChaine *mainJoueur)

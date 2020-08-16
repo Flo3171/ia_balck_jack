@@ -11,8 +11,7 @@
 void joueBlackJack(Parametre parametre)
 {
     /*! On initialise les tableaux et les variables qui seront utilisée au cour du jeu*/
-    Carte *sabot = (Carte*) malloc(sizeof(Carte) * parametre.nbJeuParSabot * NB_CARTE_PAQUETS);
-    int callstackSabot = 0;
+    Sabot *sabot = initialisationSabot(parametre.nbJeuParSabot); 
 
     /*! On initialise le tableaux contenant les joueur*/
     Joueur *tableauJoueur = (Joueur*) malloc(sizeof(Joueur) * parametre.nbJoueur);
@@ -34,7 +33,7 @@ void joueBlackJack(Parametre parametre)
     /*! On appelle autant de fois que souhaité la fonction "partie"*/
     for (int i = 0; i < parametre.nbPartie; i++)
     {
-        partie(parametre, sabot, &callstackSabot, tableauJoueur, mainDealer);
+        partie(parametre, sabot, tableauJoueur, mainDealer);
     }
     
 
@@ -45,12 +44,12 @@ void joueBlackJack(Parametre parametre)
     {
         supprimeToutMain(tableauJoueur[i].mainJoueur);
     }
-    supprimeListeChainee(mainDealer);
+    supprimeToutListeChainee(mainDealer);
     
     free(tableauJoueur);
 }
 
-void partie(Parametre parametre, Carte sabot[], int *callStackSabot, Joueur tableauJoueur[], CarteListeChaine *mainDealer)
+void partie(Parametre parametre, Sabot *sabot, Joueur tableauJoueur[], CarteListeChaine *mainDealer)
 {
     if (parametre.positionUtilisateur != -1)
             {
@@ -65,16 +64,21 @@ void partie(Parametre parametre, Carte sabot[], int *callStackSabot, Joueur tabl
     }
     
     /* On distibue deux cartes à chaque joueur et une au dealer*/
-    distubutionInitialCartes(tableauJoueur, mainDealer, parametre, sabot, callStackSabot);
+    distubutionInitialCartes(tableauJoueur, mainDealer, parametre, sabot);
 
     /* si le dealer à un as on propose aux joueur de prendre une assurance*/
     if (mainDealer->premier->carte == AS){
         for (int i = 0; i < parametre.nbJoueur; i++)
         {
-            tableauJoueur[i].assurance = choixAssurance(tableauJoueur[i].mainJoueur->premier->mainJoueur, tableauJoueur[i].mise, tableauJoueur[i].caractere.joue);
-            if(tableauJoueur[i].mise + tableauJoueur[i].assurance > tableauJoueur[i].pactole){
-                tableauJoueur[i].assurance = 0;
+            if (tableauJoueur[i].mise > 0)
+            {
+                tableauJoueur[i].assurance = choixAssurance(tableauJoueur[i].mainJoueur->premier->mainJoueur, tableauJoueur[i].mise, tableauJoueur[i].caractere.joue);
+                if(tableauJoueur[i].mise + tableauJoueur[i].assurance > tableauJoueur[i].pactole){
+                    tableauJoueur[i].assurance = 0;
+                }
             }
+            
+            
         }
     }
     
@@ -112,7 +116,7 @@ void partie(Parametre parametre, Carte sabot[], int *callStackSabot, Joueur tabl
                     } while (verifieDecision(tableauJoueur[i].choixJoueur, mainATraiter->mainJoueur, tableauJoueur[i].pactole, tableauJoueur[i].mise,  parametre)/* on verifie que le joueur est bien autoriser a faire ce qu'il veut faire */);
                     
                     /* On applique ce qu'il veut faire*/
-                    appliqueDecision(tableauJoueur[i].choixJoueur, mainATraiter->mainJoueur, tableauJoueur[i].caractere.joue, &tableauJoueur[i].mise, tableauJoueur[i].mainJoueur, parametre, sabot, callStackSabot);
+                    appliqueDecision(tableauJoueur[i].choixJoueur, mainATraiter->mainJoueur, tableauJoueur[i].caractere.joue, &tableauJoueur[i].mise, tableauJoueur[i].mainJoueur, parametre, sabot);
 
                 } while (tableauJoueur[i].choixJoueur != PASSER && tableauJoueur[i].choixJoueur != DOUBLER && tableauJoueur[i].choixJoueur != ABANDONNER && tableauJoueur[i].choixJoueur != SPLITTER);
                 if (tableauJoueur[i].choixJoueur == SPLITTER)
@@ -143,7 +147,7 @@ void partie(Parametre parametre, Carte sabot[], int *callStackSabot, Joueur tabl
         else
         {
             decisionDealer = TIRER;
-            insertionListeChainee(mainDealer, piocheCarte(sabot, callStackSabot, parametre.nbJeuParSabot));
+            insertionListeChainee(mainDealer, piocheCarte(sabot));
             if (parametre.positionUtilisateur != -1)
             {
                 printf("Le dealer tire : ");
@@ -269,19 +273,19 @@ char verifieDecision(Decision choixJoueur, CarteListeChaine *mainJoueur, long pa
     }
 }
 
-void appliqueDecision(Decision choixJoueur, CarteListeChaine *mainATraiter, Joue caractereJoue, long *miseJoueur, MainListeChaine *mainJoueur, Parametre parametre,  Carte sabot[], int *callStackSabot)
+void appliqueDecision(Decision choixJoueur, CarteListeChaine *mainATraiter, Joue caractereJoue, long *miseJoueur, MainListeChaine *mainJoueur, Parametre parametre,  Sabot *sabot)
 {
     switch (choixJoueur)
     {
     case TIRER:
-        insertionListeChainee(mainATraiter, piocheCarte(sabot, callStackSabot, parametre.nbJeuParSabot));
+        insertionListeChainee(mainATraiter, piocheCarte(sabot));
         if (caractereJoue == JOUE_HUMAIN){
             printf("\nVous obtenez : ");
             afficheMain(mainATraiter, 1);
         }
         break;
     case DOUBLER:
-        insertionListeChainee(mainATraiter, piocheCarte(sabot, callStackSabot, parametre.nbJeuParSabot));
+        insertionListeChainee(mainATraiter, piocheCarte(sabot));
         *miseJoueur *= 2;
         if (caractereJoue == JOUE_HUMAIN){
             printf("\nVous obtenez :");
@@ -296,8 +300,8 @@ void appliqueDecision(Decision choixJoueur, CarteListeChaine *mainATraiter, Joue
         supprimeListeChainee(mainATraiter);
 
         /* On distibue une carte sur chaque jeu*/
-        insertionListeChainee(mainATraiter, piocheCarte(sabot, callStackSabot, parametre.nbJeuParSabot));
-        insertionListeChainee(mainJoueur->premier->mainJoueur, piocheCarte(sabot, callStackSabot, parametre.nbJeuParSabot));
+        insertionListeChainee(mainATraiter, piocheCarte(sabot));
+        insertionListeChainee(mainJoueur->premier->mainJoueur, piocheCarte(sabot));
 
         break;
     
