@@ -15,7 +15,7 @@ long choixMise(Joueur joueur, Parametre parametre)
     case MISE_HUMAIN:
         return choixMiseUtilisateur(joueur, parametre);
         break;
-    case PASSE:
+    case MINI:
         return choixMiseMini(joueur, parametre);
         break;
     
@@ -27,7 +27,7 @@ long choixMise(Joueur joueur, Parametre parametre)
 
 long choixMiseMini(Joueur joueur, Parametre parametre)
 {
-    if (joueur.pactole >= parametre.miseMini){
+    if (joueur.pactole <= parametre.miseMini){
         return 0;
     }
     else
@@ -44,8 +44,8 @@ Decision decisionJeu(Joue caractereJoue, CarteListeChaine *mainJoueur, Carte car
     case JOUE_HUMAIN:
         return decisionJeuHumain(mainJoueur, carteDealer, parametre);
         break;
-    case PASSE:
-        return decisionJeuPasse(mainJoueur, carteDealer, parametre);
+    case DEALER:
+        return decisionJeuDealer(mainJoueur, carteDealer, parametre);
         break;
     
     default:

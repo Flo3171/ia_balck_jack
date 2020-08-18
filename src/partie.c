@@ -8,8 +8,12 @@
 
 #include "main.h"
 
-void joueBlackJack(Parametre parametre)
+void joueBlackJack(Parametre parametre, Caractere caractereJoueur[])
 {
+    /* On meusure le temps d'éxécution du programe*/
+    clock_t start, finish;
+    start = clock();
+
     /*! On initialise les tableaux et les variables qui seront utilisée au cour du jeu*/
     Sabot *sabot = initialisationSabot(parametre.nbJeuParSabot); 
 
@@ -18,13 +22,7 @@ void joueBlackJack(Parametre parametre)
     for (int i = 0; i < parametre.nbJoueur; i++)
     {
         /*! On initialise chaque joueur selon les parametre de la partie */
-        if (parametre.positionUtilisateur == i){
-            setJoueur(&tableauJoueur[i], MISE_HUMAIN, JOUE_HUMAIN, parametre.pactoleInitial, initialistationMain(), PASSER, parametre.miseMini);
-        }
-        else
-        {
-            setJoueur(&tableauJoueur[i], MINI, PASSE, parametre.pactoleInitial, initialistationMain(), PASSER, parametre.miseMini);
-        }
+        setJoueur(&tableauJoueur[i], caractereJoueur[i].mise, caractereJoueur[i].joue, parametre.pactoleInitial, initialistationMain(), PASSER, parametre.miseMini);
         /*printf("%d %d %d %d\n", tableauJoueur[0].caractere, tableauJoueur[0].choixJoueur, tableauJoueur[0].mise, tableauJoueur[0].pactole);*//*permet de controler que les joueur on été crée correctement */
     }
     /* On crée la main du dealer*/
@@ -35,6 +33,23 @@ void joueBlackJack(Parametre parametre)
     {
         partie(parametre, sabot, tableauJoueur, mainDealer);
     }
+
+    finish = clock();
+    double duration = (double)(finish - start)/CLOCKS_PER_SEC;
+    printf("\n%d partie viennent d'etre jouee en %.3f ms\n\t\tPactole\tGain\t\tGain/1Partie", parametre.nbPartie, duration*1000);
+    for (int i = 0; i < parametre.nbJoueur; i++)
+    {
+        printf("\nJoueur %d :\t", i);
+        afficheArgent(tableauJoueur[i].pactole);
+        printf("\t");
+        afficheArgent(tableauJoueur[i].pactole - parametre.pactoleInitial);
+        printf("\t");
+        afficheArgent((tableauJoueur[i].pactole - parametre.pactoleInitial)/parametre.nbPartie);
+    }
+    printf("\n\n");
+    
+
+
     
 
     
@@ -61,6 +76,11 @@ void partie(Parametre parametre, Sabot *sabot, Joueur tableauJoueur[], CarteList
     for (int i = 0; i < parametre.nbJoueur; i++)
     {
         tableauJoueur[i].mise = choixMise(tableauJoueur[i], parametre);
+        if (tableauJoueur[i].mise > tableauJoueur[i].pactole)
+        {
+            tableauJoueur[i].mise = 0;
+        }
+        
     }
     
     /* On distibue deux cartes à chaque joueur et une au dealer*/
@@ -94,26 +114,28 @@ void partie(Parametre parametre, Sabot *sabot, Joueur tableauJoueur[], CarteList
             {
                 do
                 {
-                    do
+                    if (pointFinalMain(mainATraiter->mainJoueur) < 21)
                     {
-                        if (pointFinalMain(mainATraiter->mainJoueur) < 21)
+                        /* Le joueur décide de ce qu'il veut faire*/
+                        tableauJoueur[i].choixJoueur = decisionJeu(tableauJoueur[i].caractere.joue, mainATraiter->mainJoueur, mainDealer->premier->carte, parametre);
+                    }
+                    else if(pointFinalMain(mainATraiter->mainJoueur) == 21)
+                    {
+                        tableauJoueur [i].choixJoueur = PASSER;
+                    }
+                    else
+                    {
+                        tableauJoueur[i].choixJoueur = PASSER;
+                        if (parametre.positionUtilisateur != -1)
                         {
-                            /* Le joueur décide de ce qu'il veut faire*/
-                            tableauJoueur[i].choixJoueur = decisionJeu(tableauJoueur[i].caractere.joue, mainATraiter->mainJoueur, mainDealer->premier->carte, parametre);
+                            printf("\nVous avez depase 21, vous avez donc perdu\n");
                         }
-                        else if(pointFinalMain(mainATraiter->mainJoueur) == 21)
-                        {
-                            tableauJoueur [i].choixJoueur = PASSER;
-                        }
-                        else
-                        {
-                            tableauJoueur[i].choixJoueur = PASSER;
-                            if (parametre.positionUtilisateur != -1)
-                            {
-                                printf("\nVous avez depase 21, vous avez donc perdu\n");
-                            }
-                        }
-                    } while (verifieDecision(tableauJoueur[i].choixJoueur, mainATraiter->mainJoueur, tableauJoueur[i].pactole, tableauJoueur[i].mise,  parametre)/* on verifie que le joueur est bien autoriser a faire ce qu'il veut faire */);
+                    }
+                    if (verifieDecision(tableauJoueur[i].choixJoueur, mainATraiter->mainJoueur, tableauJoueur[i].pactole, tableauJoueur[i].mise,  parametre)/* on verifie que le joueur est bien autoriser a faire ce qu'il veut faire */)
+                    {
+                        tableauJoueur[i].choixJoueur = PASSER;
+                    }
+                    
                     
                     /* On applique ce qu'il veut faire*/
                     appliqueDecision(tableauJoueur[i].choixJoueur, mainATraiter->mainJoueur, tableauJoueur[i].caractere.joue, &tableauJoueur[i].mise, tableauJoueur[i].mainJoueur, parametre, sabot);

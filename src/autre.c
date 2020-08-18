@@ -13,8 +13,57 @@ int nbAleatoire(int mini, int maxi)
     return (rand()%(maxi - mini +1)) + mini;
 }
 
-void choisirParametre(Parametre *parametre)
+void choisirParametre(Parametre *parametre, Caractere caractereJoueur[])
 {
+    printf("\nVoici les caractere des different joueur :\n\t\t MISE \t JOUE\n");
+    char mise[50], joue[50];
+    for (int i = 0; i < parametre->nbJoueur; i++)
+    {
+        switch (caractereJoueur[i].mise)
+        {
+        case MISE_HUMAIN:
+            strcpy(mise, "Humain");
+            break;
+
+        case MINI:
+            strcpy(mise, "Mise mini");
+            break;
+
+        case DOUBLE_SI_PERT:
+            strcpy(mise, "Double si pert");
+            break;
+         
+        
+        default:
+            strcpy(mise, "Inconue");
+            break;
+        }
+
+        switch (caractereJoueur[i].joue)
+        {
+        case JOUE_HUMAIN:
+            strcpy(joue, "Humain");
+            break;
+
+        case PASSE:
+            strcpy(joue, "Passe");
+            break;
+
+        case DEALER:
+            strcpy(joue, "Dealer");
+            break;
+
+        case BASIQUE:
+            strcpy(joue, "Basique");
+            break;
+        
+        default:
+            strcpy(joue, "Inconue");
+            break;
+        }
+        printf("Joueur %d :\t%s \t%s\n",i, mise, joue);
+    }
+    
     char continuer = 1;
     char retour = 12, retourOuiNon = 0;
     while (continuer)

@@ -8,23 +8,28 @@
 
 #include "main.h"
 
-void chargeParametre(char nomFichier[], Parametre *parametre)
+Caractere *chargeParametre(char nomFichier[], Parametre *parametre)
 {
     FILE *fichier = NULL;
     fichier = fopen(nomFichier, "r");
 
-    if (fichier != NULL)
-    {
-        fscanf(fichier, "%d %d %d %d %d %d %d %d %d %d %d", &(parametre->nbJeuParSabot), &(parametre->nbJoueur), &(parametre->nbCarteBrule), &(parametre->abandont), &(parametre->nbPaireMaxi), &(parametre->doublerPaire), &(parametre->miseMini), &(parametre->miseMaxi), &(parametre->pactoleInitial), &(parametre->positionUtilisateur), &(parametre->nbPartie));
-
-        fclose(fichier);
-    }
-    else
+    if (fichier == NULL)
     {
         printf("Imposible d'ouvrir le ficher");
+        exit(EXIT_FAILURE);
+    }
+
+    fscanf(fichier, "%d %d %d %d %d %d %d %d %d %d %d\n", &(parametre->nbJeuParSabot), &(parametre->nbJoueur), &(parametre->nbCarteBrule), &(parametre->abandont), &(parametre->nbPaireMaxi), &(parametre->doublerPaire), &(parametre->miseMini), &(parametre->miseMaxi), &(parametre->pactoleInitial), &(parametre->positionUtilisateur), &(parametre->nbPartie));
+
+    Caractere *caractereJoueur = (Caractere*)malloc(sizeof(Caractere)*parametre->nbJoueur);
+
+    for (int i = 0; i < parametre->nbJoueur; i++)
+    {
+        fscanf(fichier, "%d %d ", &caractereJoueur[i].mise, &caractereJoueur[i].joue);
     }
     
-    
 
+    fclose(fichier);
+    return caractereJoueur;
 }
 

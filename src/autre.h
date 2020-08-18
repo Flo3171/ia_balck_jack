@@ -20,15 +20,15 @@
 int nbAleatoire(int mini, int maxi);
 
 /**
- * \fn void choisirParametre(Parametre *parametre)
+ * \fn void choisirParametre(Parametre *parametre, Caractere caractereJoueur[])
  * \brief affiche une interface qui permet a l'utilisateur de regler les paramètre de la partie
  * 
  * \param Parametre *parametre : pointeur sur la variable qui contient les paramètre
- * \param
+ * \param Caractere caractereJoueur : tableau indiquant les cartacère des joueur
  * \return void
 */
 
-void choisirParametre(Parametre *parametre);
+void choisirParametre(Parametre *parametre, Caractere caractereJoueur[]);
 
 /**
  * \fn void setParametre(Parametre *parametre, int nbJeuParSabot, int nbJoueur, int nbCarteBrule, OuiNon abandont, int nbPaireMaxi, OuiNon doublerPaire, long miseMini, long miseMaxi, long pactoleInitial, int positionUtilisateur, int nbPartie)

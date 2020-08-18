@@ -22,7 +22,15 @@ void afficheOuiNon(OuiNon ouiNon)
 
 void afficheArgent(long argent)
 {
+    if (argent < 0)
+    {
+        argent = -argent;
+        printf("-");
+    }
     printf("%d,%02d", argent/100, argent%100);
+    
+    
+    
 }
 
 void afficheMain(CarteListeChaine *mainJoueur, char nbCarteAAfficher)

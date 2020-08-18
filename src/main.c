@@ -21,30 +21,28 @@ int main(int argc, char *argv[]){
     printf("*********************PROGRAM START*********************\n");
     char continuer = 1, retour = 0;
     Parametre parametre;
-    chargeParametre("data/default_parametre.txt", &parametre);
-    
-    
-    
-    
+    Caractere *caractereJoueur = chargeParametre("data/default_parametre_7_ia.txt", &parametre);    
     while (continuer)
     {
-        retour = acquisitionSansMessage(1, 3, "Qelle action souhaitez vous realiser ?\n1-JOUER\n2-Parametres\n3-Quitter");
+        retour = acquisitionSansMessage(1, 3, "Quelle action souhaitez vous realiser ?\n1-JOUER\n2-Parametres\n3-Quitter");
         switch (retour)
         {
         case 1:
-            joueBlackJack(parametre);
+            joueBlackJack(parametre, caractereJoueur);
             break;
         case 2:
-            choisirParametre(&parametre);
+            choisirParametre(&parametre, caractereJoueur);
             break;
         
         default:
             continuer = 0;
             break;
         }
+
+        
     }
     
-    
+    free(caractereJoueur);
     
     
 

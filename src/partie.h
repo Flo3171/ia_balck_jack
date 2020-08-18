@@ -10,18 +10,15 @@
 */
 
 /**
- * \fn void joueBlackJack(Parametre parametre)
+ * \fn void joueBlackJack(Parametre parametre, Caractere caractereJoueur[])
  * \brief permet de jouer au black jacke, joue le nombre de manche voulue
  * 
  * \param Parametre parametre : les paramètres qui doivent être appliqués à la partie
- * \param
- * \param
- * \param
- * \param
+ * \param Caractere caractereJoueur : tableau contenant les caractères de chaque joueur
  * \return void
  */
 
-void joueBlackJack(Parametre parametre);
+void joueBlackJack(Parametre parametre, Caractere caractereJoueur[]);
 
 /**
  * \fn void partie(Parametre parametre, Sabot *sabot, Joueur tableauJoueur[], CarteListeChaine *mainDealer)
