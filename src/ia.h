@@ -31,6 +31,17 @@ long choixMise(Joueur joueur, Parametre parametre);
 
 long choixMiseMini(Joueur joueur, Parametre parametre);
 
+/**
+ * \fn long choixMiseDoubleSiPert(Joueur joueur, Parametre parametre)
+ * \brief permet a une ia de type double si pert de choisir ça mise
+ * 
+ * \param Joueur joueur : joueur qui doit faire un choix
+ * \param Parametre parametre : parametre de la partie
+ * \return long : mise choisie par le joueur
+ */
+
+long choixMiseDoubleSiPert(Joueur joueur, Parametre parametre);
+
 /** 
  * \fn Decision decisionJeu(Joue caractereJoue, CarteListeChaine *mainJoueur, Carte carteDealer, Parametre parametre)
  * \brief revoie la décision faite par le joueu qu'elle que soit sont caractère

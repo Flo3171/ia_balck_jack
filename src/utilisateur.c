@@ -43,9 +43,9 @@ long acquisitionSansMessage(long mini, long maxi, char consigne[])
 long choixMiseUtilisateur(Joueur joueur, Parametre parametre)
 {
     long choix = 0;
-    printf("Vous avez ");
-    afficheArgent(joueur.pactole);
-    printf(" euro \n");
+    char chaineAAFFicher [50];
+    afficheArgent(chaineAAFFicher, joueur.pactole, -1);
+    printf("Vous avez %s euro \n");
     do
     {
         choix = 100*acquisitionSansMessage(0, parametre.miseMaxi, "Combien voulez vous miser :");

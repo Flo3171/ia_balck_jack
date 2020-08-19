@@ -20,14 +20,37 @@ void afficheOuiNon(OuiNon ouiNon)
     
 }
 
-void afficheArgent(long argent)
+void afficheArgent(char chaine[], long argent, int taille)
 {
     if (argent < 0)
     {
         argent = -argent;
-        printf("-");
+        sprintf(chaine, "-%d,%02d", argent/100, argent%100);
     }
-    printf("%d,%02d", argent/100, argent%100);
+    else
+    {
+        sprintf(chaine, "%d,%02d", argent/100, argent%100);
+    }
+
+    if (taille != -1)
+    {
+        char chaineTampon[500] = {0}, chainEspace[500] = {0};
+        strcpy(chaineTampon, chaine);
+        int nbEspaceAAjouter = taille - strlen(chaineTampon);
+        if (nbEspaceAAjouter < 0)
+        {
+            strcpy(chaineTampon, "ouf size");
+            nbEspaceAAjouter = taille - strlen(chaineTampon);
+        }
+        for (int  i = 0; i < nbEspaceAAjouter; i++)
+        {
+            strcat(chainEspace, " ");
+        }
+        sprintf(chaine, "%s%s", chainEspace, chaineTampon);
+    }
+    
+    
+    
     
     
     
@@ -92,3 +115,28 @@ void afficheMain(CarteListeChaine *mainJoueur, char nbCarteAAfficher)
     
     
 }
+
+
+ void afficheResultat(Joueur tableauJoueur[], Parametre parametre, double duration)
+ {
+    char chainePactole[12], chaineGain[12], chaineGainPartie[12], chaineGainInvestisement[12], chaineGain1000Partie[12];
+    long gain;
+
+    printf("\n%d partie viennent d'etre jouee en %.3f ms\n", parametre.nbPartie, duration*1000);
+    printf("\t    _______________________________________________________________________________\n");
+    printf("\t   |   Pactole   |     Gain    | Gain/1Partie | Gain/1000Partie |Gain/investisement|\n");
+    printf(" __________|_____________|_____________|______________|_________________|__________________|");
+    for (int i = 0; i < parametre.nbJoueur; i++)
+    {
+        gain = tableauJoueur[i].pactole - parametre.pactoleInitial;
+        afficheArgent(chainePactole, tableauJoueur[i].pactole, 11);
+        afficheArgent(chaineGain, gain, 11);
+        afficheArgent(chaineGainPartie, gain/parametre.nbPartie, 11);
+        afficheArgent(chaineGain1000Partie, (long)((gain/(double)parametre.nbPartie)*1000), 11);
+        afficheArgent(chaineGainInvestisement, (long)((gain/(double)parametre.pactoleInitial)*10000), 11);
+
+        printf("\n| Joueur %d | %s | %s |  %s |     %s |     %s %%|", i, chainePactole, chaineGain, chaineGainPartie, chaineGain1000Partie, chaineGainInvestisement);
+        printf("\n|__________|_____________|_____________|______________|_________________|__________________|");
+    }
+    printf("\n\n");
+ }

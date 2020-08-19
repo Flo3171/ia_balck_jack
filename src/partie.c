@@ -36,23 +36,11 @@ void joueBlackJack(Parametre parametre, Caractere caractereJoueur[])
 
     finish = clock();
     double duration = (double)(finish - start)/CLOCKS_PER_SEC;
-    printf("\n%d partie viennent d'etre jouee en %.3f ms\n\t\tPactole\tGain\t\tGain/1Partie", parametre.nbPartie, duration*1000);
-    for (int i = 0; i < parametre.nbJoueur; i++)
-    {
-        printf("\nJoueur %d :\t", i);
-        afficheArgent(tableauJoueur[i].pactole);
-        printf("\t");
-        afficheArgent(tableauJoueur[i].pactole - parametre.pactoleInitial);
-        printf("\t");
-        afficheArgent((tableauJoueur[i].pactole - parametre.pactoleInitial)/parametre.nbPartie);
-    }
-    printf("\n\n");
+    
+    /* On affiche les resultat des parties */
+    afficheResultat(tableauJoueur, parametre, duration);
     
 
-
-    
-
-    
     /* On libère tout l'espace qui à été utilisé au début de la fonction */
     free(sabot);
     for (int i = 0; i < parametre.nbJoueur; i++)
@@ -72,11 +60,12 @@ void partie(Parametre parametre, Sabot *sabot, Joueur tableauJoueur[], CarteList
             }
     Decision decisionDealer = PASSER;
 
+
     /* Chaqu'un des joueur choisit combien il mise durant cette partie */
     for (int i = 0; i < parametre.nbJoueur; i++)
     {
         tableauJoueur[i].mise = choixMise(tableauJoueur[i], parametre);
-        if (tableauJoueur[i].mise > tableauJoueur[i].pactole)
+        if (tableauJoueur[i].mise > tableauJoueur[i].pactole || (tableauJoueur[i].mise < parametre.miseMini && tableauJoueur[i].mise != 0))
         {
             tableauJoueur[i].mise = 0;
         }
@@ -204,7 +193,8 @@ void partie(Parametre parametre, Sabot *sabot, Joueur tableauJoueur[], CarteList
         {
             if (tableauJoueur[i].mise > 0)
             {
-                tableauJoueur[i].pactole += (double)(determineVainqueur(mainATraiter->mainJoueur, tableauJoueur[i].choixJoueur, parametre, mainDealer) * tableauJoueur[i].mise);    
+                tableauJoueur[i].dataIA.gainDernierePartie = (double)(determineVainqueur(mainATraiter->mainJoueur, tableauJoueur[i].choixJoueur, parametre, mainDealer) * tableauJoueur[i].mise);
+                tableauJoueur[i].pactole += tableauJoueur[i].dataIA.gainDernierePartie;    
             }
             mainATraiter = mainATraiter->suivant; 
         }

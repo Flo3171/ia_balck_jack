@@ -20,14 +20,16 @@
 void afficheOuiNon(OuiNon ouiNon);
 
 /**
- * \fn void afficheArgent(long argent)
+ * \fn void afficheArgent(char chaine[], long argent, int taille)
  * \brief affiche de manière claire une somme d'argent
  * 
+ * \param char chaine[] : chaine de caractère qui contient la somme a afficher 
  * \param long argent : la somme d'argent à afficher
+ * \param int taille : taille de la chainne a afficher
  * \return void
 */
 
-void afficheArgent(long argent);
+void afficheArgent(char chaine[], long argent, int taille);
 
 /**
  * \fn void afficheMain(CarteListeChaine *mainJoueur, char nbCarteAAfficher)
@@ -39,6 +41,18 @@ void afficheArgent(long argent);
  */
 
 void afficheMain(CarteListeChaine *mainJoueur, char nbCarteAAfficher);
+
+/**
+ * \fn
+ * \brief affiche les resultat des partie qui on été jouée
+ * 
+ * \param Joueur tableauJoueur[] : tableau contenant tout les joueurs
+ * \param Parametre parametre : parametre utilisé pour la partie 
+ * \param double duration : temps que le programme a mis a s'exécuter
+ * \return void
+ */
+
+void afficheResultat(Joueur tableauJoueur[], Parametre parametre, double duration);
 
 
 

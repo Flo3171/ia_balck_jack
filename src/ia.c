@@ -18,6 +18,9 @@ long choixMise(Joueur joueur, Parametre parametre)
     case MINI:
         return choixMiseMini(joueur, parametre);
         break;
+    case DOUBLE_SI_PERT:
+        return choixMiseDoubleSiPert(joueur, parametre);
+        break;
     
     default:
         return parametre.miseMini;
@@ -27,7 +30,7 @@ long choixMise(Joueur joueur, Parametre parametre)
 
 long choixMiseMini(Joueur joueur, Parametre parametre)
 {
-    if (joueur.pactole <= parametre.miseMini){
+    if (joueur.pactole < parametre.miseMini){
         return 0;
     }
     else
@@ -35,6 +38,33 @@ long choixMiseMini(Joueur joueur, Parametre parametre)
         return parametre.miseMini;
     }
     
+}
+
+long choixMiseDoubleSiPert(Joueur joueur, Parametre parametre)
+{
+    long mise = 0;
+    if (joueur.dataIA.gainDernierePartie < 0)
+    {
+        mise = -joueur.dataIA.gainDernierePartie*2;
+    }
+    else if (joueur.dataIA.gainDernierePartie == 0 && joueur.mise != 0)
+    {
+        mise = joueur.mise;
+    }
+    else
+    {
+        mise = parametre.miseMini;
+    }
+    
+    if (mise > joueur.pactole)
+    {
+        mise = parametre.miseMini;
+    }
+    if (mise > joueur.pactole)
+    {
+        mise = 0;
+    }
+    return mise;
 }
 
 Decision decisionJeu(Joue caractereJoue, CarteListeChaine *mainJoueur, Carte carteDealer, Parametre parametre)

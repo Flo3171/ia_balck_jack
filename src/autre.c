@@ -66,6 +66,7 @@ void choisirParametre(Parametre *parametre, Caractere caractereJoueur[])
     
     char continuer = 1;
     char retour = 12, retourOuiNon = 0;
+    char chaineAAficher[50];
     while (continuer)
     {
         /* On affiche les paramètres actuels */
@@ -88,15 +89,12 @@ void choisirParametre(Parametre *parametre, Caractere caractereJoueur[])
         printf("6-Doubler sur une paire : \t");
         afficheOuiNon(parametre->doublerPaire);
         printf("\n");
-        printf("7-Mise minimum : \t\t");
-        afficheArgent(parametre->miseMini);
-        printf("\n");
-        printf("8-Mise maximum : \t\t");
-        afficheArgent(parametre->miseMaxi);
-        printf("\n");
-        printf("9-Pactole initial : \t\t");
-        afficheArgent(parametre->pactoleInitial);
-        printf("\n");
+        afficheArgent(chaineAAficher, parametre->miseMini, -1);
+        printf("7-Mise minimum : \t\t %s\n", chaineAAficher);
+        afficheArgent(chaineAAficher, parametre->miseMaxi, -1);
+        printf("8-Mise maximum : \t\t%s\n", chaineAAficher);
+        afficheArgent(chaineAAficher, parametre->pactoleInitial, -1);
+        printf("9-Pactole initial : \t\t%s\n", chaineAAficher);
         printf("10-Position de l'utilisateur : \t");
         if (parametre->positionUtilisateur == -1)
         {
@@ -211,4 +209,5 @@ void setParametre(Parametre *parametre, int nbJeuParSabot, int nbJoueur, int nbC
     joueur->choixJoueur = choixJoueur;
     joueur->mise = mise;
     joueur->assurance = 0;
+    joueur->dataIA.gainDernierePartie = 0;
 }
